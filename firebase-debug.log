@@ -1,0 +1,36 @@
+[debug] [2018-10-01T04:19:47.481Z] ----------------------------------------------------------------------
+[debug] [2018-10-01T04:19:47.489Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-10-01T04:19:47.489Z] CLI Version:   4.2.1
+[debug] [2018-10-01T04:19:47.490Z] Platform:      win32
+[debug] [2018-10-01T04:19:47.490Z] Node Version:  v8.12.0
+[debug] [2018-10-01T04:19:47.492Z] Time:          Mon Oct 01 2018 13:19:47 GMT+0900 (대한민국 표준시)
+[debug] [2018-10-01T04:19:47.492Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-01T04:19:47.534Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-01T04:19:47.535Z] > authorizing via signed-in user
+[debug] [2018-10-01T04:19:47.543Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-10-01T04:19:47.544Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-10-01T04:19:47.992Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-01T04:19:48.005Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/booldook-mall  
+ 
+[debug] [2018-10-01T04:19:49.237Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-01T04:19:49.241Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/booldook-mall  
+ 
+[debug] [2018-10-01T04:19:50.562Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\fbroot\site2'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-10-01T04:19:54.900Z] Fetching environment
+[debug] [2018-10-01T04:19:54.911Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/726805469501:getServerAppConfig  
+ 
+[debug] [2018-10-01T04:19:54.913Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/726805469501/clients/_:getWebAppConfig  
+ 
+[debug] [2018-10-01T04:19:55.566Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-01T04:19:55.567Z] Starting @google-cloud/functions-emulator
+[debug] [2018-10-01T04:19:55.716Z] <<< HTTP RESPONSE 200
+[info] i  hosting[booldook-mall]: Serving hosting files from: public
+[info] +  hosting[booldook-mall]: Local server: http://localhost:5000
+[debug] [2018-10-01T04:20:02.720Z] Parsing function triggers
+[info] i  functions: No HTTPS functions found. Use firebase functions:shell if you would like to emulate other types of functions.

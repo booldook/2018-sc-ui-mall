@@ -1,0 +1,40 @@
+/* normalrize / font / common css */
+
+/* @import url('https://fonts.googleapis.com/css?family=Gothic+A1:100,200,300,400,500,600,700');*/
+/* @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800'); */
+/* @import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR:200,300,400,500,600,700,900'); */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900');
+/*
+font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Noto Serif KR', sans-serif;
+font-family: 'Gothic A1', sans-serif;
+*/
+
+html, body {margin: 0; padding: 0; font-size: 16px; color:#222; box-sizing: border-box; font-family:'Noto Sans KR', sans-serif; height:100%; font-weight:300;}
+div, ul, li, ol, dl, dd, dt {margin: 0; padding: 0; box-sizing: border-box; list-style: none;}
+
+/*** 게시판 만들때 설명 ***/
+table {margin:0; padding:0; border-collapse:collapse;}
+th, td {margin:0; padding:0;}
+
+a {text-decoration:none; color: inherit;}
+/* 보통 hover 만 준다 */
+a:link {color:#666;}			/* 기본색 */
+a:visited {color:#aaa;}		/* 방문했던 링크 */
+a:hover {color:#f30;}			/* 마우스를 올렸을때 */
+a:active {color:#ff0;}		/* 누르고 있는 동안 */
+
+.hand {cursor:pointer;}
+.clear {clear:both;}
+.clear:after {clear:both; content:""; display: block;}
+.img {width:100%;}
+.hover:hover {opacity:0.8;}
+.hover_rev {opacity:0.8;}
+.hover_rev:hover {opacity:1.0;}
+.fl {float:left;}
+.fr {float:right;}
+.abs {position:absolute;}
+.rel {position:relative;}
+.fix {position:fixed;}
+
