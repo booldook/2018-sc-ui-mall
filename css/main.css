@@ -1,0 +1,12 @@
+/***** 공통사항 *****/
+.wrap {max-width:1200px; margin:0 auto;}
+
+/***** HEADER *****/
+header {background-color:#84b736; font-size:1rem; font-weight:400; color:#fff;}
+header > div {width:100%;}
+header li {padding:1em 0.75em}
+.hd_lt {float:left;}
+.hd_lt > li {float:left; border-left:1px solid rgba(255,255,255,0.3);}
+.hd_rt {float:right;}
+.hd_rt > li {float:right; border-right:1px solid rgba(255,255,255,0.3);}
+.hd_rt .fa {font-size:1.25em; margin-left:0.5em;}
