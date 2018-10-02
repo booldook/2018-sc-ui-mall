@@ -15,9 +15,8 @@
     <script defer src="/__/firebase/5.5.2/firebase-messaging.js"></script>
     <script defer src="/__/firebase/5.5.2/firebase-storage.js"></script>
     <script defer src="/__/firebase/init.js"></script>
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script defer src="../js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
     <header>
@@ -49,18 +48,36 @@
     <section class="tops wrap clear">
       <!-- div.logo+ul.searchs>li*3^ul.logins>li*4 -->
       <div class="logos">
-        <img src="../img/main/logo.svg" class="logo">
+        <img src="../img/main/logo.svg" class="logo img">
       </div>
       <ul class="searchs">
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>
+          <input type="text" class="w3-input" name="search" placeholder="Search for products">
+        </li>
+        <li>
+          <span class="hand">SELECT CATEGORY <span>∨</span></span>
+          <ul class="search_catelist">
+             <li>Uncategorized</li> 
+             <li>Clocks</li> 
+             <li>Lighting</li> 
+             <li>Furniture</li> 
+             <li>Accessories</li> 
+             <li>Cooking</li> 
+             <li>Toys</li> 
+          </ul>
+        </li>
+        <li>
+          <span class="fa fa-search"></span>
+        </li>
       </ul>
       <ul class="logins">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>$0.00</li>
+        <li>
+          <span class="fa fa-shopping-basket"></span>
+          <span class="w3-badge">0</span>
+        </li>
+        <li><span class="fa fa-heart-o"></span></li>
+        <li>LOGIN/REGISTER</li>
       </ul>
     </section>
     <section>
@@ -69,5 +86,6 @@
     <footer>
 
     </footer>
+    <script src="../js/main.js"></script>
   </body>
 </html>

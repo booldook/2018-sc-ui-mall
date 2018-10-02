@@ -10,3 +10,26 @@ header li {padding:1em 0.75em}
 .hd_rt {float:right;}
 .hd_rt > li {float:right; border-right:1px solid rgba(255,255,255,0.3);}
 .hd_rt .fa {font-size:1.25em; margin-left:0.5em;}
+
+/***** TOPS *****/
+.tops {width:100%; padding:30px 0; font-size:1rem;}
+.logos {width:270px; float:left; padding-right:20px; padding-top:6px;}
+
+.searchs {width:calc(100% - 540px); float:left;}
+.searchs > li {border:1px solid #ccc; float:left; height:44px;}
+.searchs > li:nth-child(1) {width:calc(100% - 210px); padding-top:4px;}
+.searchs > li:nth-child(1) > input {border:none;}
+.searchs > li:nth-child(1) > input:focus {outline:none;}
+.searchs > li:nth-child(2) {width:166px; text-align:center; line-height:42px; margin-left:-1px; position:relative;}
+ul.search_catelist {display:none; border:1px solid #ccc; position:absolute; 
+	top:42px; right:-1px; min-width:166px; background-color:#fff; 
+	box-shadow:0 2px 2px rgba(0,0,0,0.1);}
+ul.search_catelist > li {padding:0.5em 0.5em 0.5em 1.5em; color:#999; line-height:1.5em; text-align:left;}
+.searchs > li:nth-child(3) {width:44px; margin-left:-1px; text-align:center; line-height:42px; font-size:1.5em; color:#ccc;}
+
+.logins {width:270px; float:right;}
+.logins > li {float: right; line-height:42px; text-align:right; padding-left:10px; font-size:1.25em;}
+.logins .fa {font-size:1.25em;}
+.logins > :nth-child(2) {position: relative;}
+.logins .w3-badge {padding:2px 4px; line-height:1em; font-size:0.75em; background-color:#84b736;
+position: absolute; top:0; right:-0.5em;}
