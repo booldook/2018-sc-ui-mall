@@ -1,6 +1,7 @@
 /***** 공통사항 *****/
 .wrap {max-width:1200px; margin:0 auto;}
-
+.arrow_down {font-size:0.5em !important;}
+.txt_green {color:#84cf13;}
 /***** HEADER *****/
 header {background-color:#84b736; font-size:1rem; font-weight:400; color:#fff;}
 header > div {width:100%;}
@@ -33,3 +34,16 @@ ul.search_catelist > li {padding:0.5em 0.5em 0.5em 1.5em; color:#999; line-heigh
 .logins > :nth-child(2) {position: relative;}
 .logins .w3-badge {padding:2px 4px; line-height:1em; font-size:0.75em; background-color:#84b736;
 position: absolute; top:0; right:-0.5em;}
+
+/***** mains *****/
+.mains {width:100%; border-top:1px solid #ccc; border-bottom:1px solid #ccc; height:52px; font-size:1.25rem;}
+.navs > li {float:left; height:50px; line-height:50px;}
+.navs > .cate_top {width:270px; background-color:#84b736; padding:0 1em; color:#fff; font-weight:400;}
+.navs > .cate_top > :first-child {font-size:1.25em; margin-right:0.3em;}
+.navs > .cate_top > :nth-child(2) .arrow_down {color:#ccc;}
+.navs > .cate_top > :last-child {float:right;}
+.navs > .menu {width:calc(100% - 540px);}
+.navs > .menu .arrow_down {color:#ccc;}
+.navs > .menu > ul > li {float:left; margin-left:1em;}
+.navs > .etc {width:270px; text-align:right;}
+.navs > .etc > :nth-child(2) {padding:0 0.5em;}
