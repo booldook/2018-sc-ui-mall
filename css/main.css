@@ -37,13 +37,20 @@ position: absolute; top:0; right:-0.5em;}
 
 /***** mains *****/
 .mains {width:100%; border-top:1px solid #ccc; border-bottom:1px solid #ccc; height:52px; font-size:1.25rem;}
-.navs > li {float:left; height:50px; line-height:50px;}
+.navs {position: relative;}
+.navs > li:not(.menu_modal) {float:left; height:50px; line-height:50px;}
 .navs > .cate_top {width:270px; background-color:#84b736; padding:0 1em; color:#fff; font-weight:400;}
 .navs > .cate_top > :first-child {font-size:1.25em; margin-right:0.3em;}
 .navs > .cate_top > :nth-child(2) .arrow_down {color:#ccc;}
 .navs > .cate_top > :last-child {float:right;}
 .navs > .menu {width:calc(100% - 540px);}
 .navs > .menu .arrow_down {color:#ccc;}
-.navs > .menu > ul > li {float:left; margin-left:1em;}
+.navs > .menu > ul > li {float:left; margin-left:1em; position: relative;}
+.navs > .menu > ul > li:nth-child(1), .navs > .menu > ul > li:nth-child(2) {position: static !important;}
 .navs > .etc {width:270px; text-align:right;}
 .navs > .etc > :nth-child(2) {padding:0 0.5em;}
+
+.menu_modal {background-color:#fff; top:51px; left:0; position:absolute !important; width:100%; height:300px; display: none;}
+.menu_modal > ul {width:20%; padding:2%; float: left;}
+.menu_modal > ul > :first-child {box-shadow:0 0 3px rgba(0,0,0,0.3);}
+.menu_modal > ul > :last-child {margin:1em 0; text-align:center; color:#333; font-weight:400;}
