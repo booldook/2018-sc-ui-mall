@@ -51,6 +51,6 @@ position: absolute; top:0; right:-0.5em;}
 .navs > .etc > :nth-child(2) {padding:0 0.5em;}
 
 .menu_modal {background-color:#fff; top:51px; left:0; position:absolute !important; width:100%; height:300px; display: none;}
-.menu_modal > ul {width:20%; padding:2%; float: left;}
-.menu_modal > ul > :first-child {box-shadow:0 0 3px rgba(0,0,0,0.3);}
-.menu_modal > ul > :last-child {margin:1em 0; text-align:center; color:#333; font-weight:400;}
+#modal0 > ul {width:20%; padding:2%; float: left;}
+#modal0 > ul > :first-child {box-shadow:0 0 3px rgba(0,0,0,0.3);}
+#modal0 > ul > :last-child {margin:0.5em 0; text-align:center; color:#333; font-weight:400;}

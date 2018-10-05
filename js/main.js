@@ -1,21 +1,22 @@
-$(".searchs .hand").click(function(){
+$(".searchs .hand").click(function () {
 	$(".search_catelist").stop().slideToggle(100);
 });
 
-$(".menu li").hover(function(){
+$(".menu li").hover(function () {
 	$(".menu_modal").stop().fadeOut(0);
 	$(this).children(".menu_modal").stop().fadeIn(100);
-}, function(){
+}, function () {
 	$(".menu_modal").stop().fadeOut(0);
 });
+
 
 function modalMake0() {
 	var html = '';
 	var sites = [];
 	for(var i=0; i<10; i++) {
 		sites[i] = [];
-		sites[i][2] = '#';
-		sites[i][0] = '<li><img src="../img/main/site'+i+'.jpg" class="img" onclick="goUrl('+i+');"></li>';
+		sites[i][2] = 'https://naver.com';
+		sites[i][0] = '<li><img src="../img/main/site'+i+'.jpg" class="img" onclick="goUrl(\''+sites[i][2]+'\');"></li>';
 	}
 	sites[0][1] = '<li>Demo Default</li>';
 	sites[1][1] = '<li>Demo Decor</li>';
@@ -35,6 +36,6 @@ function modalMake0() {
 }
 modalMake0();
 
-function goUrl(n) {
-	location.href = sites[n][2];
+function goUrl(url) {
+	location.href = url;
 }
