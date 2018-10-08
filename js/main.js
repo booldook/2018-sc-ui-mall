@@ -9,7 +9,7 @@ $(".menu li").hover(function () {
 	$(".menu_modal").stop().fadeOut(0);
 });
 
-
+/*****카테고리0 ******/
 function modalMake0() {
 	var html = '';
 	var sites = [];
@@ -39,3 +39,139 @@ modalMake0();
 function goUrl(url) {
 	location.href = url;
 }
+
+/***** 카테고리 모달1 ******/
+var cates = [{
+	main: {
+		title: "SHOP PAGES", 
+		icon: "", 
+		link: "#"
+	},
+	sub:[
+		{title:"Filters area", icon:"HOT", link:"#"},
+		{title:"Hidden sidebar", icon:"", link:"#"},
+		{title:"No page heading", icon:"", link:"#"},
+		{title:"Small categories menu", icon:"", link:"#"},
+		{title:"Masonry grid", icon:"", link:"#"},
+		{title:"Products list view", icon:"", link:"#"},
+		{title:"With background", icon:"", link:"#"},
+		{title:"Category description", icon:"", link:"#"},
+		{title:"Only categories", icon:"", link:"#"},
+		{title:"Header overlap", icon:"", link:"#"},
+		{title:"Default shop", icon:"", link:"#"}
+	]
+},{
+	main: {
+		title: "PRODUCT HOVERS", 
+		icon: "EFFECTS", 
+		link: "#"
+	},
+	sub:[
+		{title:"Summary on hover", icon:"", link:"#"},
+		{title:"Icons on hover", icon:"", link:"#"},
+		{title:"Icons & Add to cart", icon:"", link:"#"},
+		{title:"Full info on image", icon:"", link:"#"},
+		{title:"All info on hover", icon:"", link:"#"},
+		{title:"Button on image", icon:"", link:"#"},
+		{title:"Standard button", icon:"", link:"#"},
+		{title:"Quick shop", icon:"", link:"#"},
+		{title:"Tiled hover", icon:"", link:"#"},
+		{title:"Categories hover #1", icon:"", link:"#"},
+		{title:"Categories hover #2", icon:"", link:"#"}
+	]
+},{
+	main: {
+		title: "PRODUCT PAGESUN", 
+		icon: "LIMITED", 
+		link: "#"
+	},
+	sub:[
+		{title:"Default", icon:"", link:"#"},
+		{title:"Centered", icon:"", link:"#"},
+		{title:"Sticky description", icon:"", link:"#"},
+		{title:"With shadow", icon:"", link:"#"},
+		{title:"With background", icon:"", link:"#"},
+		{title:"Accordion tabs", icon:"NEW", link:"#"},
+		{title:"Accordion in content", icon:"", link:"#"},
+		{title:"Sticky add to cart", icon:"", link:"#"},
+		{title:"With sidebar", icon:"", link:"#"},
+		{title:"Extra content #1", icon:"", link:"#"},
+		{title:"Extra content #2", icon:"", link:"#"}
+	]
+},{
+	main: {
+		title: "PRODUCT IMAGES", 
+		icon: "", 
+		link: "#"
+	},
+	sub:[
+		{title:"Thumbnails left", icon:"", link:"#"},
+		{title:"Thumbnails bottom", icon:"", link:"#"},
+		{title:"Sticky images", icon:"", link:"#"},
+		{title:"One column", icon:"", link:"#"},
+		{title:"Two columns", icon:"", link:"#"},
+		{title:"Combined grid", icon:"", link:"#"},
+		{title:"Images full-width", icon:"", link:"#"},
+		{title:"Zoom image", icon:"", link:"#"},
+		{title:"Images size - small", icon:"", link:"#"},
+		{title:"Images size - large", icon:"", link:"#"},
+		{title:"Without thumbnails", icon:"", link:"#"}
+	]
+},{
+	main: {
+		title: "WOOCOMMERCE", 
+		icon: "", 
+		link: "#"
+	},
+	sub:[
+		{title:"Simple product", icon:"", link:"#"},
+		{title:"Variable product", icon:"", link:"#"},
+		{title:"External product", icon:"", link:"#"},
+		{title:"Grouped product", icon:"", link:"#"},
+		{title:"Shopping Cart", icon:"", link:"#"},
+		{title:"Checkout", icon:"", link:"#"},
+		{title:"My account", icon:"", link:"#"},
+		{title:"Wishlist", icon:"", link:"#"},
+		{title:"Track order", icon:"", link:"#"},
+		{title:"Custom 404 page #1", icon:"", link:"#"},
+		{title:"Custom 404 page #2", icon:"", link:"#"}
+	]
+},{
+	main: {
+		title: "FEATURES", 
+		icon: "BEST", 
+		link: "#"
+	},
+	sub:[
+		{title:"360° product viewer", icon:"", link:"#"},
+		{title:"With video", icon:"", link:"#"},
+		{title:"With instagram", icon:"", link:"#"},
+		{title:"With countdown timer", icon:"", link:"#"},
+		{title:"Product presentation", icon:"", link:"#"},
+		{title:"Variations swatches", icon:"", link:"#"},
+		{title:"Infinit scrolling", icon:"NEW", link:"#"},
+		{title:"Load more button", icon:"", link:"#"},
+		{title:"Catalog mode", icon:"", link:"#"},
+		{title:"Cookies law info", icon:"", link:"#"},
+		{title:"Parallax scrolling", icon:"", link:"#"}
+	]
+}];
+
+function modalMake1() {
+	var html = '';
+	var wid = 100/cates.length + "%";
+	for(var i=0; i<cates.length; i++) {
+		html = '<ul style="width:'+wid+'">';
+		html+= '<li class="title">';
+		html+= '<a href="'+cates[i].main.link+'">'+cates[i].main.title+'</a>';
+		html+= '</li>';
+		for(var j=0; j<cates[i].sub.length; j++) {
+			html+= '<li class="cont">';
+			html+= '<a href="'+cates[i].sub[j].link+'">'+cates[i].sub[j].title+'</a>';
+			html+= '</li>';
+		}    
+		html+= '</ul>';
+		$("#modal1").append(html);
+	}
+}
+modalMake1();
