@@ -188,6 +188,16 @@ function modalMake1() {
 		html+= '</ul>';
 		$("#modal1").append(html);
 	}
+	$("#modal1 .tooltip").each(function(){
+		var n = $(this).prev().html().length;
+		$(this).css({"left": n*5+"px"});
+	});
 }
 modalMake1();
 
+function goSite(url) {
+	location.href = url;
+}
+$("footer > div").click(function(){
+	goSite('http://daum.net');
+});
