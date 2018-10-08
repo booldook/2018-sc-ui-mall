@@ -48,8 +48,8 @@ var cates = [{
 		link: "#"
 	},
 	sub:[
-		{title:"Filters area", icon:"HOT", link:"#"},
-		{title:"Hidden sidebar", icon:"", link:"#"},
+		{title:"Filters area", icon:"", link:"#"},
+		{title:"Hidden sidebar", icon:"HOT", color:"green", link:"#"},
 		{title:"No page heading", icon:"", link:"#"},
 		{title:"Small categories menu", icon:"", link:"#"},
 		{title:"Masonry grid", icon:"", link:"#"},
@@ -63,7 +63,8 @@ var cates = [{
 },{
 	main: {
 		title: "PRODUCT HOVERS", 
-		icon: "EFFECTS", 
+		icon: "EFFECTS",
+		color: "orange", 
 		link: "#"
 	},
 	sub:[
@@ -81,8 +82,9 @@ var cates = [{
 	]
 },{
 	main: {
-		title: "PRODUCT PAGESUN", 
-		icon: "LIMITED", 
+		title: "PRODUCT PAGES", 
+		icon: "UNLIMITED",
+		color: "red", 
 		link: "#"
 	},
 	sub:[
@@ -91,7 +93,7 @@ var cates = [{
 		{title:"Sticky description", icon:"", link:"#"},
 		{title:"With shadow", icon:"", link:"#"},
 		{title:"With background", icon:"", link:"#"},
-		{title:"Accordion tabs", icon:"NEW", link:"#"},
+		{title:"Accordion tabs", icon:"NEW", color:"orange", link:"#"},
 		{title:"Accordion in content", icon:"", link:"#"},
 		{title:"Sticky add to cart", icon:"", link:"#"},
 		{title:"With sidebar", icon:"", link:"#"},
@@ -139,7 +141,8 @@ var cates = [{
 },{
 	main: {
 		title: "FEATURES", 
-		icon: "BEST", 
+		icon: "BEST",
+		color: "red", 
 		link: "#"
 	},
 	sub:[
@@ -149,7 +152,7 @@ var cates = [{
 		{title:"With countdown timer", icon:"", link:"#"},
 		{title:"Product presentation", icon:"", link:"#"},
 		{title:"Variations swatches", icon:"", link:"#"},
-		{title:"Infinit scrolling", icon:"NEW", link:"#"},
+		{title:"Infinit scrolling", icon:"NEW", color:"red", link:"#"},
 		{title:"Load more button", icon:"", link:"#"},
 		{title:"Catalog mode", icon:"", link:"#"},
 		{title:"Cookies law info", icon:"", link:"#"},
@@ -164,10 +167,22 @@ function modalMake1() {
 		html = '<ul style="width:'+wid+'">';
 		html+= '<li class="title">';
 		html+= '<a href="'+cates[i].main.link+'">'+cates[i].main.title+'</a>';
+		if(cates[i].main.icon != "") {
+			html+= '<div class="tooltip" style="background:'+cates[i].main.color+'">';
+			html+= cates[i].main.icon;
+			html+= '<div style="background:'+cates[i].main.color+'"></div>';
+			html+= '</div>';
+		}
 		html+= '</li>';
 		for(var j=0; j<cates[i].sub.length; j++) {
 			html+= '<li class="cont">';
 			html+= '<a href="'+cates[i].sub[j].link+'">'+cates[i].sub[j].title+'</a>';
+			if(cates[i].sub[j].icon != "") {
+				html+= '<div class="tooltip" style="background:'+cates[i].sub[j].color+'">';
+				html+= cates[i].sub[j].icon;
+				html+= '<div style="background:'+cates[i].sub[j].color+'"></div>';
+				html+= '</div>';
+			}
 			html+= '</li>';
 		}    
 		html+= '</ul>';
@@ -175,3 +190,4 @@ function modalMake1() {
 	}
 }
 modalMake1();
+

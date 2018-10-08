@@ -51,10 +51,14 @@ position: absolute; top:0; right:-0.5em;}
 .navs > .etc > :nth-child(2) {padding:0 0.5em;}
 
 .menu_modal {background-color:#fff; top:51px; left:0; position:absolute !important; width:100%; display: none; padding:3em 0; border-bottom:1px solid #ccc;}
+.menu_modal a {text-decoration:none;}
 #modal0 > ul {width:20%; padding:2%; float: left;}
 #modal0 > ul > :first-child {box-shadow:0 0 3px rgba(0,0,0,0.3);}
 #modal0 > ul > :last-child {margin:0.5em 0; text-align:center; color:#333; font-weight:400;}
 #modal1 > ul {padding:2%; float:left;}
-#modal1 li {line-height:2.5em;}
+#modal1 li {line-height:2.5em; position:relative; float:left;}
+#modal1 .tooltip {position:absolute; padding:0.2em; top:-1.5rem; right:-20%; opacity:1; color:white;}
+#modal1 .tooltip > div {width:10px; height:10px; transform:rotate(55deg); position: absolute; left:20%; bottom:-4px;}
 #modal1 .title a {font-weight:400; color:#222;}
 #modal1 .cont a {color:#999; font-size:0.9em;}
+#modal1 a:hover {color:#84b736;}
