@@ -57,7 +57,7 @@ position: absolute; top:0; right:-0.5em;}
 #modal0 > ul > :last-child {margin:0.5em 0; text-align:center; color:#333; font-weight:400;}
 #modal1 > ul {padding:2%; float:left;}
 #modal1 li {line-height:2.5em; position:relative;}
-#modal1 .tooltip {position:absolute; padding:0.15em; top:-1.20em; opacity:1; color:white; font-size:0.8em;}
+#modal1 .tooltip {position:absolute; padding:0.15em; top:-1.20em; left:0; opacity:1; color:white; font-size:0.6em;}
 #modal1 .tooltip > div {width:8px; height:8px; transform:rotate(55deg); position: absolute; left:20%; bottom:-3px;}
 #modal1 .title a {font-weight:400; color:#222;}
 #modal1 .cont a {color:#999; font-size:0.9em;}
