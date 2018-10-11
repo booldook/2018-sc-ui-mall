@@ -76,6 +76,68 @@ $.ajax({
 	} 
 });
 
+/***** 카테고리 2 ******/
+$.ajax({
+	url: "../json/cate2.json",
+	type: "get",
+	dataType: "json",
+	success: function(data) {
+		var html;
+		var blogs = data.result.blog;
+		var posts = data.result.recent;
+		//Blog 생성
+		for(var i=0; i<blogs.length; i++) {
+			html  = '<ul>';
+			html += '<li class="title">';
+			html += '<a href="'+blogs[i].main.link+'">'+blogs[i].main.title+'</a>';
+			html += '</li>';
+			for(var j=0; j<blogs[i].sub.length; j++) {
+				html += '<li class="sub">';
+				html += '<a href="'+blogs[i].sub[j].link+'">'+blogs[i].sub[j].title+'</a>';
+				html += '</li>';
+			}
+			html += '</ul>';
+			$("#modal2 > .blogs").append(html);
+		}
+		//Recent 생성
+		for(var i=0; i<posts.length; i++) {
+			html  = '<ul>';
+			html += '</ul>';
+			$("#modal2 > .recents").append(html);
+		}
+	},
+	error: function(xhr, status, error) {
+		alert("통신이 원할하지 않습니다.\n잠시 후 다시 시도해 주세요.");
+		console.log(xhr, status, error);
+	}
+});
+
+/*
+
+	<ul>
+		<li class="title"><a href="#">BLOG TYPES</a></li>
+		<li class="sub"><a href="#">Alternative</a></li>
+	</ul>
+	<ul>
+		<li class="title"><a href="#">BLOG TYPES</a></li>
+		<li class="sub"><a href="#">Alternative</a></li>
+	</ul>
+
+
+	<ul>
+		<li class="post" onclick="goPost('#');">
+			<img src="../img/main/blog-11-75x65.jpg" class="img post_img">
+			<div>
+				<div class="post_title">A companion for extra sleeping</div>
+				<span class="post_date">July 23, 2016</span>
+				<span class="post_cnt">1</span>
+				<span class="post_comment">Comment</span>
+			</div>
+		</li>
+	</ul>
+</div>
+*/
+
 
 
 
