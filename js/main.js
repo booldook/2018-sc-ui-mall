@@ -90,10 +90,22 @@ $.ajax({
 			html = '<ul>';
 			html += '<li class="title">';
 			html += '<a href="' + blogs[i].main.link + '">' + blogs[i].main.title + '</a>';
+			if(blogs[i].main.icon != "") {
+				html += '<div class="tooltip" style="background:' + blogs[i].main.color + '">';
+				html += blogs[i].main.icon;
+				html += '<div style="background:' + blogs[i].main.color + '"></div>';
+				html += '</div>';
+			}
 			html += '</li>';
 			for (var j = 0; j < blogs[i].sub.length; j++) {
 				html += '<li class="sub">';
 				html += '<a href="' + blogs[i].sub[j].link + '">' + blogs[i].sub[j].title + '</a>';
+				if(blogs[i].sub[j].icon != "") {
+					html += '<div class="tooltip" style="background:' + blogs[i].sub[j].color + '">';
+					html += blogs[i].sub[j].icon;
+					html += '<div style="background:' + blogs[i].sub[j].color + '"></div>';
+					html += '</div>';
+				}
 				html += '</li>';
 			}
 			html += '</ul>';
@@ -101,13 +113,13 @@ $.ajax({
 		}
 		//Recent 생성
 		for (var i = 0; i < posts.length; i++) {
-			html  = '<ul>';
-			html += '<li class="post clear" onclick="goPost(\''+posts[i].link+'\');">';
-			html += '<img src="'+posts[i].img+'" class="img post_img hover">';
+			html = '<ul>';
+			html += '<li class="post clear" onclick="goPost(\'' + posts[i].link + '\');">';
+			html += '<img src="' + posts[i].img + '" class="img post_img hover">';
 			html += '<div>';
-			html += '<div class="post_title">'+posts[i].title+'</div>';
-			html += '<span class="post_date">'+posts[i].date+'</span>';
-			html += '<span class="post_cnt">'+posts[i].comment+'</span>';
+			html += '<div class="post_title">' + posts[i].title + '</div>';
+			html += '<span class="post_date">' + posts[i].date + '</span>';
+			html += '<span class="post_cnt">' + posts[i].comment + '</span>';
 			html += '<span class="post_comment">Comment</span>';
 			html += '</div>';
 			html += '</li>';
