@@ -65,13 +65,13 @@ position: absolute; top:0; right:-0.5em;}
 #modal1 a:hover {color:#84b736;}
 
 
-#modal2 {width:802px; position: absolute; border:1px solid #ccc; margin-top:-1px; padding:0;}
-#modal2 > .blogs {width:490px; float:left; padding:40px 30px; border-right:1px solid #ccc;}
+#modal2 {width:802px; position: absolute; border:1px solid #ccc; margin-top:-1px; padding:0; background-color:#fafafa;}
+#modal2 > .blogs {width:490px; float:left; padding:40px 30px; border-right:1px solid #ccc; background-color:#fff;}
 #modal2 > .blogs > ul {width:50%; float:left; line-height:2.5em;}
 .blogs .title a {font-weight:400; color:#222;}
 .blogs .sub a {color:#999; font-size:0.9em;}
 .blogs a:hover {color:#84b736;}
-#modal2 > .recents {width:310px; float:right; background-color:#fafafa; padding:40px 30px;}
+#modal2 > .recents {width:310px; float:right; padding:40px 30px;}
 .recents .title {font-weight:400; color:#222; line-height:2.5em;}
 .recents .post {line-height:1em; border-bottom:1px solid #ccc; padding:1em 0;}
 .post > img {float:left; width:35%;}
