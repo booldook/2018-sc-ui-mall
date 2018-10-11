@@ -2,7 +2,7 @@ $(".searchs .hand").click(function () {
 	$(".search_catelist").stop().slideToggle(100);
 });
 
-$(".menu li").hover(function () {
+$(".menu > ul > li").hover(function () {
 	$(".menu_modal").stop().fadeOut(0);
 	$(this).children(".menu_modal").stop().fadeIn(100);
 }, function () {

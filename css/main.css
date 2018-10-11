@@ -50,6 +50,7 @@ position: absolute; top:0; right:-0.5em;}
 .navs > .etc {width:270px; text-align:right;}
 .navs > .etc > :nth-child(2) {padding:0 0.5em;}
 
+.menu > ul > li {cursor:pointer;}
 .menu_modal {background-color:#fff; top:51px; left:0; position:absolute !important; width:100%; display: none; padding:3em 0; border-bottom:1px solid #ccc;}
 .menu_modal a {text-decoration:none;}
 #modal0 > ul {width:20%; padding:2%; float: left;}
@@ -62,3 +63,19 @@ position: absolute; top:0; right:-0.5em;}
 #modal1 .title a {font-weight:400; color:#222;}
 #modal1 .cont a {color:#999; font-size:0.9em;}
 #modal1 a:hover {color:#84b736;}
+
+
+#modal2 {width:802px; position: absolute; border:1px solid #ccc; margin-top:-1px;}
+#modal2 > .blogs {width:490px; float:left;}
+#modal2 > .blogs > ul {width:245px; float:left;}
+.blogs .title {font-weight:400; color:#222; line-height:2.5em;}
+.blogs .sub {color:#999; font-size:0.9em; line-height:2.5em;}
+.blogs a:hover {color:#84b736;}
+#modal2 > .recents {width:310px; float:right; background-color:#fafafa;}
+.recents .post {}
+.post > img {float:left;}
+.post > div {float:right;}
+.post .post_title {}
+.post .post_date {}
+.post .post_cnt {}
+.post .post_comment {}
