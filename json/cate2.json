@@ -7,60 +7,51 @@
 			"link": "#"
 		},
 		"sub": [{
-				"title": "Alternative",
-				"icon": "",
-				"color": "",
-				"link": "#"
-			},
-			{
-				"title": "Small images",
-				"icon": "",
-				"color": "",
-				"link": "#"
-			},
-			{
-				"title": "Blog chess",
-				"icon": "",
-				"color": "",
-				"link": "#"
-			},
-			{
-				"title": "Masonry grid",
-				"icon": "",
-				"color": "",
-				"link": "#"
-			},
-			{
-				"title": "Infinit scrolling",
-				"icon": "FEATURE",
-				"color": "",
-				"link": "#"
-			},
-			{
-				"title": "With background",
-				"icon": "",
-				"color": "",
-				"link": "#"
-			},
-			{
-				"title": "Blog flat",
-				"icon": "",
-				"color": "",
-				"link": "#"
-			},
-			{
-				"title": "Default flat",
-				"icon": "",
-				"color": "",
-				"link": "#"
-			},
-			{
-				"title": "Blog mask",
-				"icon": "NEW",
-				"color": "",
-				"link": "#"
-			}
-		]
+			"title": "Alternative",
+			"icon": "",
+			"color": "",
+			"link": "#"
+		}, {
+			"title": "Small images",
+			"icon": "",
+			"color": "",
+			"link": "#"
+		}, {
+			"title": "Blog chess",
+			"icon": "",
+			"color": "",
+			"link": "#"
+		}, {
+			"title": "Masonry grid",
+			"icon": "",
+			"color": "",
+			"link": "#"
+		}, {
+			"title": "Infinit scrolling",
+			"icon": "FEATURE",
+			"color": "",
+			"link": "#"
+		}, {
+			"title": "With background",
+			"icon": "",
+			"color": "",
+			"link": "#"
+		}, {
+			"title": "Blog flat",
+			"icon": "",
+			"color": "",
+			"link": "#"
+		}, {
+			"title": "Default flat",
+			"icon": "",
+			"color": "",
+			"link": "#"
+		}, {
+			"title": "Blog mask",
+			"icon": "NEW",
+			"color": "",
+			"link": "#"
+		}]
 	}, {
 		"main": {
 			"title": "SINGLE POSTS",
@@ -69,60 +60,66 @@
 			"link": "#"
 		},
 		"sub": [{
-				"title": "Post example #1",
-				"icon": "",
-				"color": "",
-				"link": "#"
-			},
-			{
-				"title": "Post example #2",
-				"icon": "",
-				"color": "",
-				"link": "#"
-			},
-			{
-				"title": "Post example #3",
-				"icon": "",
-				"color": "",
-				"link": "#"
-			},
-			{
-				"title": "Post example #4",
-				"icon": "",
-				"color": "",
-				"link": "#"
-			},
-			{
-				"title": "Post example #5",
-				"icon": "",
-				"color": "",
-				"link": "#"
-			},
-			{
-				"title": "Post example #6",
-				"icon": "",
-				"color": "",
-				"link": "#"
-			},
-			{
-				"title": "Post example #7",
-				"icon": "",
-				"color": "",
-				"link": "#"
-			},
-			{
-				"title": "Post example #8",
-				"icon": "",
-				"color": "",
-				"link": "#"
-			},
-			{
-				"title": "Post example #9",
-				"icon": "",
-				"color": "",
-				"link": "#"
-			}
-		]
+			"title": "Post example #1",
+			"icon": "",
+			"color": "",
+			"link": "#"
+		}, {
+			"title": "Post example #2",
+			"icon": "",
+			"color": "",
+			"link": "#"
+		}, {
+			"title": "Post example #3",
+			"icon": "",
+			"color": "",
+			"link": "#"
+		}, {
+			"title": "Post example #4",
+			"icon": "",
+			"color": "",
+			"link": "#"
+		}, {
+			"title": "Post example #5",
+			"icon": "",
+			"color": "",
+			"link": "#"
+		}, {
+			"title": "Post example #6",
+			"icon": "",
+			"color": "",
+			"link": "#"
+		}, {
+			"title": "Post example #7",
+			"icon": "",
+			"color": "",
+			"link": "#"
+		}, {
+			"title": "Post example #8",
+			"icon": "",
+			"color": "",
+			"link": "#"
+		}, {
+			"title": "Post example #9",
+			"icon": "",
+			"color": "",
+			"link": "#"
+		}]
 	}],
-	"recent": [{}, {}, {}]
+	"recent": [{
+		"title":"A companion for extra sleeping",
+		"date":"July 23, 2018",
+		"comment": 1,
+		"img":"../img/main/blog-11-75x65.jpg"
+	}, {
+		"title":"Outdoor seating collection inspiration",
+		"date":"July 22, 2018",
+		"comment": 2,
+		"img":"../img/main/blog-12-75x65.jpg"
+	}, {
+		"title":"Modular seating and table system",
+		"date":"July 21, 2018",
+		"comment": 3,
+		"img":"../img/main/blog-17-75x65.jpg"
+	}]
 }
