@@ -1,0 +1,19 @@
+html, body {font-size: 15px;}
+.navs {width:100%; position:fixed; z-index:10;}
+.navs > li {float:left; padding:1em;}
+.navs > li:last-child {float:right;}
+.navs_pc {display:block;}
+.navs_mo {display:none;}
+.navs_sub {width:100%; position: fixed; top:3.4em; z-index:9; display:none;}
+.navs_sub > li {padding:1em; background-color:#fff;}
+.dn_bg {background-color:#fff; color:#000; box-shadow:0 5px 5px rgba(0,0,0,0.4);}
+
+.wrap {width:100%; height:5000px; background-color:aqua;}
+
+
+
+@media screen and (max-width:768px) {
+	.navs_pc {display:none;}
+	.navs_mo {display:block;}
+	.navs_sub {display:none;}
+}
