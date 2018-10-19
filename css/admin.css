@@ -1,0 +1,13 @@
+.header {width:100%; padding:8px; border-bottom:1px solid #ccc;}
+.header > :first-child {float:left;}
+.header > :last-child {float:right;}
+.logo {max-width:160px; margin-top:8px;}
+
+.navs {width:100%; height:100px; text-align:center; border-bottom:1px solid #ccc;}
+.nav {width:100px; height:99px; display:inline-block; border-left:1px solid #ccc; border-right:1px solid #ccc; font-size:1.5em; font-weight:bold; padding-top:1.5em; color:#333; cursor:pointer;}
+.nav:hover {background-color:rgb(29, 58, 102); color:#fff;}
+.nav > span {font-size:1.5em;}
+
+.section {width:100%; max-width:1200px; margin:0 auto; min-height:calc(100% - 201px); padding:20px; display:none;}
+.section > .title {font-size:2em; font-weight:bold;}
+.footer {width:100%; height:50px; background-color:#222; text-align:center; line-height:50px; color:#f1f1f1;}
