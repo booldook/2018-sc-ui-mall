@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>쇼핑몰 입니다.</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/main_backup_181019.css">
+	<script defer src="/__/firebase/5.5.2/firebase-app.js"></script>
+	<script defer src="/__/firebase/5.5.2/firebase-auth.js"></script>
+	<script defer src="/__/firebase/5.5.2/firebase-database.js"></script>
+	<script defer src="/__/firebase/5.5.2/firebase-messaging.js"></script>
+	<script defer src="/__/firebase/5.5.2/firebase-storage.js"></script>
+	<script defer src="/__/firebase/init.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<header>
+		<div class="wrap clear">
+			<ul class="hd_lt">
+				<li>ENGLISH <span class="arrow_down">∨</span></li>
+				<li>COUNTRY <span class="arrow_down">∨</span></li>
+				<li>FREE SHIPPING FOR ALL ORDERS OF $150</li>
+			</ul>
+			<ul class="hd_rt">
+				<li>FAQS</li>
+				<li>CONTACT US</li>
+				<li>
+					<span class="fa fa-envelope-o"></span>
+					NEWSLETTER
+				</li>
+				<li>
+					<span class="fa fa-facebook"></span>
+					<span class="fa fa-twitter"></span>
+					<span class="fa fa-google-plus"></span>
+					<span class="fa fa-facebook"></span>
+					<span class="fa fa-envelope"></span>
+					<span class="fa fa-instagram"></span>
+					<span class="fa fa-pinterest"></span>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<section class="tops wrap clear">
+		<!-- div.logo+ul.searchs>li*3^ul.logins>li*4 -->
+		<div class="logos">
+			<img src="../img/main/logo.svg" class="logo img">
+		</div>
+		<ul class="searchs">
+			<li>
+				<input type="text" class="w3-input" name="search" placeholder="Search for products">
+			</li>
+			<li>
+				<span class="hand">SELECT CATEGORY <span class="arrow_down">∨</span></span>
+				<ul class="search_catelist">
+					<li>Uncategorized</li>
+					<li>Clocks</li>
+					<li>Lighting</li>
+					<li>Furniture</li>
+					<li>Accessories</li>
+					<li>Cooking</li>
+					<li>Toys</li>
+				</ul>
+			</li>
+			<li>
+				<span class="fa fa-search"></span>
+			</li>
+		</ul>
+		<ul class="logins">
+			<li>$0.00</li>
+			<li>
+				<span class="fa fa-shopping-basket"></span>
+				<span class="w3-badge">0</span>
+			</li>
+			<li><span class="fa fa-heart-o"></span></li>
+			<li>LOGIN/REGISTER</li>
+		</ul>
+	</section>
+	<section class="mains">
+		<ul class="navs wrap clear">
+			<li class="cate_top">
+				<span class="fa fa-bars"></span>
+				<span>BROWSE CATEGORIES</span>
+				<span class="arrow_down">∨</span>
+			</li>
+			<li class="menu">
+				<ul>
+					<li class="txt_green">
+						HOME <span class="arrow_down">∨</span>
+						<div id="modal0" class="menu_modal clear"></div>
+					</li>
+					<li>
+						SHOP <span class="arrow_down">∨</span>
+						<div id="modal1" class="menu_modal clear"></div>
+					</li>
+					<li>
+						BLOG <span class="arrow_down">∨</span>
+						<div id="modal2" class="menu_modal clear">
+							<div class="blogs"></div>
+							<div class="recents">
+								<div class="title">RECENT POSTS</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						PAGES <span class="arrow_down">∨</span>
+						<div id="modal3" class="menu_modal">3번</div>
+					</li>
+					<li>
+						ELEMENTS <span class="arrow_down">∨</span>
+						<div id="modal4" class="menu_modal">4번</div>
+					</li>
+					<li>BUY</li>
+				</ul>
+			</li>
+			<li class="etc">
+				<span class="txt_green">SPECIAL OFFER</span>
+				<span>|</span>
+				<span>PURCHASE THEME</span>
+			</li>
+		</ul>
+	</section>
+
+
+
+
+
+	<section class="banners">
+		<div class="cates wrap clear">
+			<ul class="cate">
+
+			</ul>
+			<ul class="banner">
+
+			</ul>
+		</div>
+	</section>
+	<footer>
+	</footer>
+	<script src="../js/main_backup_181019.js"></script>
+</body>
+
+</html>

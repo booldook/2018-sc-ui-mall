@@ -1,0 +1,83 @@
+/***** 공통사항 *****/
+.wrap {max-width:1200px; margin:0 auto;}
+.arrow_down {font-size:0.5em !important;}
+.txt_green {color:#84cf13;}
+/***** HEADER *****/
+header {background-color:#84b736; font-size:1rem; font-weight:400; color:#fff;}
+header > div {width:100%;}
+header li {padding:1em 0.75em}
+.hd_lt {float:left;}
+.hd_lt > li {float:left; border-left:1px solid rgba(255,255,255,0.3);}
+.hd_rt {float:right;}
+.hd_rt > li {float:right; border-right:1px solid rgba(255,255,255,0.3);}
+.hd_rt .fa {font-size:1.25em; margin-left:0.5em;}
+
+/***** TOPS *****/
+.tops {width:100%; padding:30px 0; font-size:1rem;}
+.logos {width:270px; float:left; padding-right:20px; padding-top:6px;}
+
+.searchs {width:calc(100% - 540px); float:left;}
+.searchs > li {border:1px solid #ccc; float:left; height:44px;}
+.searchs > li:nth-child(1) {width:calc(100% - 210px); padding-top:4px;}
+.searchs > li:nth-child(1) > input {border:none;}
+.searchs > li:nth-child(1) > input:focus {outline:none;}
+.searchs > li:nth-child(2) {width:166px; text-align:center; line-height:42px; margin-left:-1px; position:relative;}
+ul.search_catelist {display:none; border:1px solid #ccc; position:absolute; 
+	top:42px; right:-1px; min-width:166px; background-color:#fff; 
+	box-shadow:0 2px 2px rgba(0,0,0,0.1);}
+ul.search_catelist > li {padding:0.5em 0.5em 0.5em 1.5em; color:#999; line-height:1.5em; text-align:left;}
+.searchs > li:nth-child(3) {width:44px; margin-left:-1px; text-align:center; line-height:42px; font-size:1.5em; color:#ccc;}
+
+.logins {width:270px; float:right;}
+.logins > li {float: right; line-height:42px; text-align:right; padding-left:10px; font-size:1.25em;}
+.logins .fa {font-size:1.25em;}
+.logins > :nth-child(2) {position: relative;}
+.logins .w3-badge {padding:2px 4px; line-height:1em; font-size:0.75em; background-color:#84b736;
+position: absolute; top:0; right:-0.5em;}
+
+/***** mains *****/
+.mains {width:100%; border-top:1px solid #ccc; border-bottom:1px solid #ccc; height:52px; font-size:1.25rem;}
+.navs {position: relative;}
+.navs > li:not(.menu_modal) {float:left; height:50px; line-height:50px;}
+.navs > .cate_top {width:270px; background-color:#84b736; padding:0 1em; color:#fff; font-weight:400;}
+.navs > .cate_top > :first-child {font-size:1.25em; margin-right:0.3em;}
+.navs > .cate_top > :nth-child(2) .arrow_down {color:#ccc;}
+.navs > .cate_top > :last-child {float:right;}
+.navs > .menu {width:calc(100% - 540px);}
+.navs > .menu .arrow_down {color:#ccc;}
+.navs > .menu > ul > li {float:left; margin-left:1em; position: relative;}
+.navs > .menu > ul > li:nth-child(1), .navs > .menu > ul > li:nth-child(2) {position: static !important;}
+.navs > .etc {width:270px; text-align:right;}
+.navs > .etc > :nth-child(2) {padding:0 0.5em;}
+
+.menu > ul > li {cursor:pointer;}
+.menu_modal {background-color:#fff; top:51px; left:0; position:absolute !important; width:100%; display: none; padding:3em 0; border-bottom:1px solid #ccc;}
+.menu_modal a {text-decoration:none;}
+.menu_modal li {line-height:2.5em; position:relative;}
+.menu_modal .tooltip {position:absolute; padding:0.15em; top:-1.20em; left:0; opacity:1; color:white; font-size:0.6em;}
+.menu_modal .tooltip > div {width:8px; height:8px; transform:rotate(55deg); position: absolute; left:20%; bottom:-3px;}
+
+#modal0 > ul {width:20%; padding:2%; float: left;}
+#modal0 > ul > :first-child {box-shadow:0 0 3px rgba(0,0,0,0.3);}
+#modal0 > ul > :last-child {margin:0.5em 0; text-align:center; color:#333; font-weight:400;}
+#modal1 > ul {padding:2%; float:left;}
+#modal1 .title a {font-weight:400; color:#222;}
+#modal1 .cont a {color:#999; font-size:0.9em;}
+#modal1 a:hover {color:#84b736;}
+
+
+#modal2 {width:802px; position: absolute; border:1px solid #ccc; margin-top:-1px; padding:0; background-color:#fafafa;}
+#modal2 > .blogs {width:490px; float:left; padding:40px 30px; border-right:1px solid #ccc; background-color:#fff;}
+#modal2 > .blogs > ul {width:50%; float:left; line-height:2.5em;}
+.blogs .title a {font-weight:400; color:#222;}
+.blogs .sub a {color:#999; font-size:0.9em;}
+.blogs a:hover {color:#84b736;}
+#modal2 > .recents {width:310px; float:right; padding:40px 30px;}
+.recents .title {font-weight:400; color:#222; line-height:2.5em;}
+.recents .post {line-height:1em; border-bottom:1px solid #ccc; padding:1em 0;}
+.post > img {float:left; width:35%;}
+.post > div {float:right; width:60%; line-height:1.25em;}
+.post .post_title {color:#666;}
+.post .post_date {color:#aaa; font-size:0.75em;}
+.post .post_cnt {color:#999; font-size:0.75em;}
+.post .post_comment {color:#999; font-size:0.75em;}
