@@ -21,24 +21,25 @@ function initHome() {
 	ref.on("child_changed", homeChg);
 }
 initHome();
+
 function homeAdd(data) {
 	var id = data.key;
 	var img = data.val().img;
-	var src = '../img/main/'+img;
+	var src = '../img/main/' + img;
 	var title = data.val().title;
 	var link = data.val().link;
 	var html = '';
-	html += '<ul class="list clear row" id="'+id+'">';
+	html += '<ul class="list clear row" id="' + id + '">';
 	html += '<li class="col-xs-4 col-sm-3 col-md-2 col-lg-2">';
 	html += '<div>';
-	html += '<img src="'+src+'">';
-	html += '<input type="text" class="tit_img form-control" placeholder="이미지" value="'+img+'">';
+	html += '<img src="' + src + '">';
+	html += '<input type="text" class="tit_img form-control" placeholder="이미지" value="' + img + '">';
 	html += '</div>';
 	html += '</li>';
 	html += '<li class="col-xs-4 col-sm-6 col-md-7 col-lg-8">';
 	html += '<div>';
-	html += '<input type="text" class="title form-control" placeholder="타이틀" value="'+title+'">';
-	html += '<input type="text" class="link form-control" style="margin-top:5px;" placeholder="링크주소" value="'+link+'">';
+	html += '<input type="text" class="title form-control" placeholder="타이틀" value="' + title + '">';
+	html += '<input type="text" class="link form-control" style="margin-top:5px;" placeholder="링크주소" value="' + link + '">';
 	html += '</div>';
 	html += '</li>';
 	html += '<li class="col-xs-4 col-sm-3 col-md-3 col-lg-2">';
@@ -53,24 +54,24 @@ function homeAdd(data) {
 
 function homeRev(data) {
 	var id = data.key;
-	$("#"+id).remove();
+	$("#" + id).remove();
 }
+
 function homeChg(data) {
 	var id = data.key;
-	var ul = $("#"+id);
-	$("img", ul).attr("src", "../img/main/"+data.val().img);
+	var ul = $("#" + id);
+	$("img", ul).attr("src", "../img/main/" + data.val().img);
 	alert("수정되었습니다.");
 }
 
 
-$("#home_save").on('click', function(){
+$("#home_save").on('click', function () {
 	var img = $("#home_wr .tit_img").val();
 	var title = $("#home_wr .title").val();
 	var link = $("#home_wr .link").val();
-	if(title == '' || link == '' || img == '') {
+	if (title == '' || link == '' || img == '') {
 		alert("내용을 적어주세요.");
-	}
-	else {
+	} else {
 		ref = db.ref("root/home");
 		ref.push({
 			img: img,
@@ -80,17 +81,17 @@ $("#home_save").on('click', function(){
 		alert("등록되었습니다.");
 	}
 });
-function homeUp(obj){
-	var ul = $(obj).parent().parent().parent();	
+
+function homeUp(obj) {
+	var ul = $(obj).parent().parent().parent();
 	var id = ul.attr("id");
 	var img = $(".tit_img", ul).val();
 	var title = $(".title", ul).val();
 	var link = $(".link", ul).val();
-	if(title == '' || link == '' || img == '') {
+	if (title == '' || link == '' || img == '') {
 		alert("내용을 적어주세요.");
-	}
-	else {
-		ref = db.ref("root/home/"+id);
+	} else {
+		ref = db.ref("root/home/" + id);
 		ref.update({
 			img: img,
 			title: title,
@@ -98,12 +99,13 @@ function homeUp(obj){
 		});
 	}
 }
-function homeDel(obj){
-	if(confirm("정말로 삭제하시겠습니까?")){
+
+function homeDel(obj) {
+	if (confirm("정말로 삭제하시겠습니까?")) {
 		//var id = obj.parentNode.parentNode.parentNode.id;
 		var id = $(obj).parent().parent().parent().attr("id");
-		if(id != "") {
-			db.ref("root/home/"+id).remove();
+		if (id != "") {
+			db.ref("root/home/" + id).remove();
 		}
 	}
 }
@@ -117,16 +119,17 @@ function initShop() {
 	ref.on("child_changed", shopChg);
 }
 initShop();
-function shopAdd(data) {
-	var id = data.key;
-	var html = '';	
-	html += '<ul id="'+id+'">';
+
+function shopMake(id, chk, data) {
+	var html = '';
+	if(chk == 'A') html += '<ul id="' + id + '">';
+	else if(chk == 'C') $("#"+id).empty();
 	html += '<li class="shop_li1 clear">';
 	html += '<div>';
-	html += '<input type="text" value="'+data.val().title+'" class="title form-control" placeholder="제목">';
-	html += '<input type="text" value="'+data.val().icon+'" class="icon form-control" placeholder="아이콘">';
-	html += '<input type="text" value="'+data.val().color+'" class="color form-control" placeholder="아이콘컬러">';
-	html += '<input type="text" value="'+data.val().link+'" class="link form-control" placeholder="링크">';
+	html += '<input type="text" value="' + data.val().title + '" class="title form-control" placeholder="제목">';
+	html += '<input type="text" value="' + data.val().icon + '" class="icon form-control" placeholder="아이콘">';
+	html += '<input type="text" value="' + data.val().color + '" class="color form-control" placeholder="아이콘컬러">';
+	html += '<input type="text" value="' + data.val().link + '" class="link form-control" placeholder="링크">';
 	html += '</div>';
 	html += '<div>';
 	html += '<button class="btn btn-danger shop_del1" onclick="shopDel(this);">삭제</button>';
@@ -141,30 +144,41 @@ function shopAdd(data) {
 	html += '<input type="text" class="link form-control" placeholder="링크">';
 	html += '</div>';
 	html += '<div>';
-	html += '<button class="btn btn-primary shop_wr2">저장</button>';
+	html += '<button class="btn btn-primary shop_wr2" onclick="shopAdd2(this)">저장</button>';
 	html += '</div>';
 	html += '</li>';
-	html += '</ul>';
-	$("#shop_wrap").append(html);
+	if(chk == 'A') {
+		html += '</ul>';
+		$("#shop_wrap").append(html);
+	}
+	else if(chk == 'C') {
+		$("#"+id).append(html);
+	}
 }
+
+function shopAdd(data) {
+	var id = data.key;
+	shopMake(id, 'A', data);
+}
+
 function shopRev(data) {
-	console.log("REMOVE");	
-	console.log(data);	
+	console.log("REMOVE");
+	console.log(data);
 }
+
 function shopChg(data) {
-	console.log("CHANGE");	
-	console.log(data);	
+	var id = data.key;
+	shopMake(id, 'C', data);
 }
-$(".shop_wr").click(function(){
+$(".shop_wr").click(function () {
 	var title = $(".shop_li0 .title").val();
 	var icon = $(".shop_li0 .icon").val();
 	var color = $(".shop_li0 .color").val();
 	var link = $(".shop_li0 .link").val();
-	if(title == "") {
+	if (title == "") {
 		alert("제목을 입력하세요.");
 		$(".shop_li0 .title").focus();
-	}
-	else {
+	} else {
 		ref = db.ref("root/shop");
 		ref.push({
 			title: title,
@@ -174,19 +188,33 @@ $(".shop_wr").click(function(){
 		}).key;
 	}
 });
-$(".shop_wr2").click(function(){
-	var div = $(this).parent().prev();
+function shopAdd2(obj) {
+	var div = $(obj).parent().prev();
+	var idUl = $(obj).parent().parent().parent().attr("id");
 	var title = $(".title", div).val();
 	var icon = $(".icon", div).val();
 	var color = $(".color", div).val();
 	var link = $(".link", div).val();
-});
+	ref = db.ref("root/shop/" + idUl + "/sub");
+	ref.push({
+		title: title,
+		icon: icon,
+		color: color,
+		link: link
+	}).key;
+}
 
 /***** UI ******/
-$(".nav").on("click", function(){
+$(".nav").on("click", function () {
 	var n = $(this).index();
-	$(".nav").css({"background-color":"", "color":""});
-	$(this).css({"background-color":"rgb(29, 58, 102)", "color":"#fff"});
+	$(".nav").css({
+		"background-color": "",
+		"color": ""
+	});
+	$(this).css({
+		"background-color": "rgb(29, 58, 102)",
+		"color": "#fff"
+	});
 	$(".section").hide();
 	$(".section").eq(n).show();
 });
