@@ -108,6 +108,84 @@ function homeDel(obj){
 	}
 }
 
+/***** SHOP ******/
+function initShop() {
+	$("#shop_wrap > ul").remove();
+	ref = db.ref("root/shop");
+	ref.on("child_added", shopAdd);
+	ref.on("child_removed", shopRev);
+	ref.on("child_changed", shopChg);
+}
+initShop();
+function shopAdd(data) {
+	console.log("ADD");
+	var html = '';	
+	html += '<ul>';
+	html += '<li class="shop_li1 clear">';
+	html += '<div>';
+	html += '<input type="text" class="title form-control" placeholder="제목">';
+	html += '<input type="text" class="icon form-control" placeholder="아이콘">';
+	html += '<input type="text" class="color form-control" placeholder="아이콘컬러">';
+	html += '</div>';
+	html += '<div>';
+	html += '<button class="btn btn-danger shop_del1">삭제</button>';
+	html += '<button class="btn btn-warning shop_up1">수정</button>';
+	html += '</div>';
+	html += '</li>';
+	html += '<li class="shop_li2 clear">';
+	html += '<div>';
+	html += '<input type="text" class="title form-control" placeholder="제목">';
+	html += '<input type="text" class="icon form-control" placeholder="아이콘">';
+	html += '<input type="text" class="color form-control" placeholder="아이콘컬러">';
+	html += '</div>';
+	html += '<div>';
+	html += '<button class="btn btn-danger shop_del2">삭제</button>';
+	html += '<button class="btn btn-warning shop_up2">수정</button>';
+	html += '</div>';
+	html += '</li>';
+	html += '<li class="shop_li2 clear">';
+	html += '<div>';
+	html += '<input type="text" class="title form-control" placeholder="제목">';
+	html += '<input type="text" class="icon form-control" placeholder="아이콘">';
+	html += '<input type="text" class="color form-control" placeholder="아이콘컬러">';
+	html += '</div>';
+	html += '<div>';
+	html += '<button class="btn btn-danger">삭제</button>';
+	html += '<button class="btn btn-warning">수정</button>';
+	html += '</div>';
+	html += '</li>';
+	html += '</ul>';
+	$("#shop_wrap").append(html);
+}
+function shopRev(data) {
+	console.log("REMOVE");	
+	console.log(data);	
+}
+function shopChg(data) {
+	console.log("CHANGE");	
+	console.log(data);	
+}
+$(".shop_wr").click(function(){
+	var title = $(".shop_li0 .title").val();
+	var icon = $(".shop_li0 .icon").val();
+	var color = $(".shop_li0 .color").val();
+	var link = $(".shop_li0 .link").val();
+	if(title == "") {
+		alert("제목을 입력하세요.");
+		$(".shop_li0 .title").focus();
+	}
+	else {
+		ref = db.ref("root/shop");
+		ref.push({
+			title: title,
+			icon: icon,
+			color: color,
+			link: link
+		}).key;
+	}
+});
+
+
 /***** UI ******/
 $(".nav").on("click", function(){
 	var n = $(this).index();
