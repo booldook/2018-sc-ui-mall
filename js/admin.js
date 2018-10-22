@@ -55,6 +55,9 @@ function homeRev(data) {
 	$("#"+id).remove();
 }
 function homeChg(data) {
+	var id = data.key;
+	var ul = $("#"+id);
+	$("img", ul).attr("src", "../img/main/"+data.val().img);
 	alert("수정되었습니다.");
 }
 
