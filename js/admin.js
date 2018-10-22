@@ -118,40 +118,30 @@ function initShop() {
 }
 initShop();
 function shopAdd(data) {
-	console.log("ADD");
+	var id = data.key;
 	var html = '';	
-	html += '<ul>';
+	html += '<ul id="'+id+'">';
 	html += '<li class="shop_li1 clear">';
 	html += '<div>';
-	html += '<input type="text" class="title form-control" placeholder="제목">';
-	html += '<input type="text" class="icon form-control" placeholder="아이콘">';
-	html += '<input type="text" class="color form-control" placeholder="아이콘컬러">';
+	html += '<input type="text" value="'+data.val().title+'" class="title form-control" placeholder="제목">';
+	html += '<input type="text" value="'+data.val().icon+'" class="icon form-control" placeholder="아이콘">';
+	html += '<input type="text" value="'+data.val().color+'" class="color form-control" placeholder="아이콘컬러">';
+	html += '<input type="text" value="'+data.val().link+'" class="link form-control" placeholder="링크">';
 	html += '</div>';
 	html += '<div>';
-	html += '<button class="btn btn-danger shop_del1">삭제</button>';
-	html += '<button class="btn btn-warning shop_up1">수정</button>';
-	html += '</div>';
-	html += '</li>';
-	html += '<li class="shop_li2 clear">';
-	html += '<div>';
-	html += '<input type="text" class="title form-control" placeholder="제목">';
-	html += '<input type="text" class="icon form-control" placeholder="아이콘">';
-	html += '<input type="text" class="color form-control" placeholder="아이콘컬러">';
-	html += '</div>';
-	html += '<div>';
-	html += '<button class="btn btn-danger shop_del2">삭제</button>';
-	html += '<button class="btn btn-warning shop_up2">수정</button>';
+	html += '<button class="btn btn-danger shop_del1" onclick="shopDel(this);">삭제</button>';
+	html += '<button class="btn btn-warning shop_up1" onclick="shopUp(this);">수정</button>';
 	html += '</div>';
 	html += '</li>';
-	html += '<li class="shop_li2 clear">';
+	html += '<li class="shop_li2 clear shop_li2_wr">';
 	html += '<div>';
 	html += '<input type="text" class="title form-control" placeholder="제목">';
 	html += '<input type="text" class="icon form-control" placeholder="아이콘">';
 	html += '<input type="text" class="color form-control" placeholder="아이콘컬러">';
+	html += '<input type="text" class="link form-control" placeholder="링크">';
 	html += '</div>';
 	html += '<div>';
-	html += '<button class="btn btn-danger">삭제</button>';
-	html += '<button class="btn btn-warning">수정</button>';
+	html += '<button class="btn btn-primary shop_wr2">저장</button>';
 	html += '</div>';
 	html += '</li>';
 	html += '</ul>';
@@ -184,7 +174,13 @@ $(".shop_wr").click(function(){
 		}).key;
 	}
 });
-
+$(".shop_wr2").click(function(){
+	var div = $(this).parent().prev();
+	var title = $(".title", div).val();
+	var icon = $(".icon", div).val();
+	var color = $(".color", div).val();
+	var link = $(".link", div).val();
+});
 
 /***** UI ******/
 $(".nav").on("click", function(){
