@@ -120,7 +120,8 @@ function initShop() {
 }
 initShop();
 
-function shopMake(id, chk, data) {
+function shopMake(chk, data) {
+	var id = data.key;
 	var html = '';
 	if(chk == 'A') html += '<ul id="' + id + '">';
 	else if(chk == 'C') $("#"+id).empty();
@@ -158,7 +159,7 @@ function shopMake(id, chk, data) {
 
 function shopAdd(data) {
 	var id = data.key;
-	shopMake(id, 'A', data);
+	shopMake('A', data);
 }
 
 function shopRev(data) {
@@ -168,7 +169,7 @@ function shopRev(data) {
 
 function shopChg(data) {
 	var id = data.key;
-	shopMake(id, 'C', data);
+	shopMake('C', data);
 }
 $(".shop_wr").click(function () {
 	var title = $(".shop_li0 .title").val();
