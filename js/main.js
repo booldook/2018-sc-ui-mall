@@ -1,3 +1,40 @@
+var config = {
+	apiKey: "AIzaSyAmJXF4xCHexyq0ofjmfBS1HCvnlbeOwJM",
+	authDomain: "booldook-mall.firebaseapp.com",
+	databaseURL: "https://booldook-mall.firebaseio.com",
+	projectId: "booldook-mall",
+	storageBucket: "booldook-mall.appspot.com",
+	messagingSenderId: "726805469501"
+};
+firebase.initializeApp(config);
+
+var db = firebase.database();
+var ref;
+var key;
+
+/***** HOME ******/
+(function initHome() {
+	ref = db.ref("root/home");
+	ref.on("child_added", homeAdd);
+	ref.on("child_removed", homeRev);
+})();
+function homeAdd(data) {
+	var id = data.key;
+	var img = data.val().img;
+	var src = '../img/main/'+img;
+	var title = data.val().title;
+	var link = data.val().link;
+	var html = '';
+	html += '<ul id="'+id+'">';
+	html += '<li><img src="'+src+'" class="img" onclick="goUrl(\''+link+'\');">'+title+'</li>';
+	html += '</ul>';
+	$("#modal0").append(html);
+}
+function homeRev(data) {
+	var id = data.key;
+	$("#"+id).remove();
+}
+
 $(".searchs .hand").click(function () {
 	$(".search_catelist").stop().slideToggle(100);
 });
@@ -12,26 +49,6 @@ $(".menu > ul > li").hover(function () {
 function goUrl(url) {
 	location.href = url;
 }
-
-/*****카테고리0 ******/
-$.ajax({
-	url: "../json/cate0.json",
-	type: "get",
-	dataType: "json",
-	data: {},
-	success: function (data) {
-		var html;
-		for (var i = 0; i < data.result.length; i++) {
-			var html = '<ul>';
-			html += '<li><img src="' + data.result[i].img + '" class="img" onclick="goUrl(\'' + data.result[i].link + '\');">' + data.result[i].title + '</li>';
-			html += '</ul>';
-			$("#modal0").append(html);
-		}
-	},
-	error: function (xhr, status, error) {
-		console.log(shr, status, error);
-	}
-});
 
 /***** 카테고리 1 ******/
 $.ajax({

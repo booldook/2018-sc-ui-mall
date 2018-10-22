@@ -13,11 +13,11 @@ var ref;
 var key;
 
 /***** HOME ******/
-
 (function initHome() {
 	$(".list:not(#home_wr)").remove();
 	ref = db.ref("root/home");
 	ref.on("child_added", homeAdd);
+	ref.on("child_removed", homeRev);
 })();
 function homeAdd(data) {
 	var id = data.key;
@@ -31,6 +31,7 @@ function homeAdd(data) {
 	html += '<div>';
 	html += '<img src="'+src+'">';
 	html += '<input type="text" class="tit_img form-control" placeholder="이미지" value="'+img+'">';
+	html += '</div>';
 	html += '</li>';
 	html += '<li class="col-xs-4 col-sm-6 col-md-7 col-lg-8">';
 	html += '<div>';
@@ -47,6 +48,12 @@ function homeAdd(data) {
 	html += '</ul>';
 	$("#home_wrap").append(html);
 }
+function homeRev(data) {
+	var id = data.key;
+	$("#"+id).remove();
+}
+
+
 
 $("#home_save").on('click', function(){
 	var img = $("#home_wr .tit_img").val();
@@ -65,8 +72,18 @@ $("#home_save").on('click', function(){
 		alert("등록되었습니다.");
 	}
 });
-
-
+function homeDel(obj){
+	//var id = obj.parentNode.parentNode.parentNode.id;
+	var id = $(obj).parent().parent().parent().attr("id");
+	if(confirm("정말로 삭제하시겠습니까?")){
+		if(id != "") {
+			db.ref("root/home/"+id).remove();
+		}
+	}
+}
+function homeUp(obj){
+	
+}
 
 /***** UI ******/
 $(".nav").on("click", function(){
