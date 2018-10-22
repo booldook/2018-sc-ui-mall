@@ -50,6 +50,7 @@ function homeAdd(data) {
 	html += '</ul>';
 	$("#home_wrap").append(html);
 }
+
 function homeRev(data) {
 	var id = data.key;
 	$("#"+id).remove();
