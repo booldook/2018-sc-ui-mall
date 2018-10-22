@@ -23,8 +23,12 @@
 #shop_wrap ul > li > :last-child {width:40%; float:right; text-align:center;}
 #shop_wrap .form-control {margin-bottom:3px;}
 #shop_wrap .btn-danger {margin-bottom:3px;}
+.shop_li0 {border:10px solid rgb(118, 172, 235); width:50%; margin:20px 0; padding:10px;}
+.shop_li0 > :first-child {width:80%; float:left;}
+.shop_li0 > :last-child {width:20%; float:right; text-align:center; padding-top:40px;}
 .shop_li1 {background-color:#ccc; padding:8px;}
 .shop_li2 {border-bottom:1px solid #ccc; padding:8px;}
+.shop_li2:last-child {border-bottom:none;}
 
 
 
