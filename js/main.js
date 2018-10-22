@@ -17,6 +17,7 @@ var key;
 	ref = db.ref("root/home");
 	ref.on("child_added", homeAdd);
 	ref.on("child_removed", homeRev);
+	ref.on("child_changed", homeChg);
 })();
 function homeAdd(data) {
 	var id = data.key;
@@ -26,7 +27,10 @@ function homeAdd(data) {
 	var link = data.val().link;
 	var html = '';
 	html += '<ul id="'+id+'">';
-	html += '<li><img src="'+src+'" class="img" onclick="goUrl(\''+link+'\');">'+title+'</li>';
+	html += '<li>';
+	html += '<img src="'+src+'" class="img" onclick="goUrl(\''+link+'\');">';
+	html += '<span>'+title+'</span>';
+	html += '</li>';
 	html += '</ul>';
 	$("#modal0").append(html);
 }
@@ -34,6 +38,13 @@ function homeRev(data) {
 	var id = data.key;
 	$("#"+id).remove();
 }
+function homeChg(data) {
+	var id = data.key;
+	var ul = $("#"+id);
+	$("img", ul).attr("src", "../img/main/"+data.val().img);
+	$("span", ul).html(data.val().title);
+}
+
 
 $(".searchs .hand").click(function () {
 	$(".search_catelist").stop().slideToggle(100);
