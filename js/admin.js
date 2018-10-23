@@ -123,8 +123,7 @@ initShop();
 function shopMake(chk, data) {
 	var id = data.key;
 	var html = '';
-	if(chk == 'A') html += '<ul id="' + id + '">';
-	else if(chk == 'C') $("#"+id).empty();
+	if(chk == 'C') html += '<ul id="' + id + '">';
 	html += '<li class="shop_li1 clear">';
 	html += '<div>';
 	html += '<input type="text" value="' + data.val().title + '" class="title form-control" placeholder="제목">';
@@ -148,28 +147,35 @@ function shopMake(chk, data) {
 	html += '<button class="btn btn-primary shop_wr2" onclick="shopAdd2(this)">저장</button>';
 	html += '</div>';
 	html += '</li>';
-	if(chk == 'A') {
+	if(data.val().sub) {
+		db.ref("root/shop/"+id+"/sub").once("value").then(function(snapshot){
+			snapshot.forEach(function(item){
+				console.log(item.key);
+				console.log(item.val());
+			});
+		});
+	}
+	if(chk == 'C') {
 		html += '</ul>';
 		$("#shop_wrap").append(html);
 	}
-	else if(chk == 'C') {
-		$("#"+id).append(html);
+	else if(chk == 'U') {
+		$("#"+id).html(html);
 	}
 }
 
 function shopAdd(data) {
 	var id = data.key;
-	shopMake('A', data);
+	shopMake('C', data);
 }
 
 function shopRev(data) {
-	console.log("REMOVE");
 	console.log(data);
 }
 
 function shopChg(data) {
 	var id = data.key;
-	shopMake('C', data);
+	shopMake('U', data);
 }
 $(".shop_wr").click(function () {
 	var title = $(".shop_li0 .title").val();
