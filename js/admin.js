@@ -171,11 +171,6 @@ function shopMake(chk, data) {
 				html += '</li>';
 				$("#"+id).append(html);
 			});
-			$('.grid').masonry({
-				itemSelector: '.grid-item',
-				columnWidth: '.grid-sizer',
-				percentPosition: true
-			});
 		});
 	}
 }
