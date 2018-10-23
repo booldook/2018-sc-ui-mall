@@ -132,8 +132,8 @@ function shopMake(chk, data) {
 	html += '<input type="text" value="' + data.val().link + '" class="link form-control" placeholder="링크">';
 	html += '</div>';
 	html += '<div>';
-	html += '<button class="btn btn-danger shop_del1" onclick="shopDel(this);">삭제</button>';
-	html += '<button class="btn btn-warning shop_up1" onclick="shopUp(this);">수정</button>';
+	html += '<button class="btn btn-danger" onclick="shopDel(this);">삭제</button>';
+	html += '<button class="btn btn-warning" onclick="shopUp(this);">수정</button>';
 	html += '</div>';
 	html += '</li>';
 	html += '<li class="shop_li2 clear shop_li2_wr">';
@@ -144,7 +144,7 @@ function shopMake(chk, data) {
 	html += '<input type="text" class="link form-control" placeholder="링크">';
 	html += '</div>';
 	html += '<div>';
-	html += '<button class="btn btn-primary shop_wr2" onclick="shopAdd2(this)">저장</button>';
+	html += '<button class="btn btn-primary" onclick="shopAdd2(this)">저장</button>';
 	html += '</div>';
 	html += '</li>';
 	if(chk == 'C') {
@@ -165,7 +165,8 @@ function shopMake(chk, data) {
 				html += '<input type="text" value="'+item.val().link+'" class="link form-control" placeholder="링크">';
 				html += '</div>';
 				html += '<div>';
-				html += '<button class="btn btn-primary shop_wr2" onclick="shopAdd2(this)">저장</button>';
+				html += '<button class="btn btn-danger" onclick="shopDel2(this);">삭제</button>';
+				html += '<button class="btn btn-warning" onclick="shopUp2(this);">수정</button>';
 				html += '</div>';
 				html += '</li>';
 				$("#"+id).append(html);

@@ -18,7 +18,7 @@
 #home .list > li:last-child {text-align:center; border-right:none;}
 #home .list img {height:60px; margin-bottom:8px; border:1px solid #ccc;}
 
-#shop_wrap ul {width:24%; margin:0.5%; float:left; border:1px solid #999;}
+#shop_wrap ul {width:24%; margin:0.5%; float:left; border:5px solid rgb(12, 53, 116);}
 #shop_wrap ul > li > :first-child {width:70%; float:left;}
 #shop_wrap ul > li > :last-child {width:30%; float:right; text-align:center; padding-top:16px;}
 #shop_wrap .form-control {margin-bottom:3px;}
