@@ -112,7 +112,7 @@ function homeDel(obj) {
 
 /***** SHOP ******/
 function initShop() {
-	$("#shop_wrap > ul").remove();
+	$(".grid > ul").remove();
 	ref = db.ref("root/shop");
 	ref.on("child_added", shopAdd);
 	ref.on("child_removed", shopRev);
@@ -123,7 +123,7 @@ initShop();
 function shopMake(chk, data) {
 	var id = data.key;
 	var html = '';
-	if(chk == 'C') html += '<ul id="' + id + '">';
+	if(chk == 'C') html += '<ul id="' + id + '" class="grid-item">';
 	html += '<li class="shop_li1 clear">';
 	html += '<div>';
 	html += '<input type="text" value="' + data.val().title + '" class="title form-control" placeholder="제목">';
@@ -149,7 +149,7 @@ function shopMake(chk, data) {
 	html += '</li>';
 	if(chk == 'C') {
 		html += '</ul>';
-		$("#shop_wrap").append(html);
+		$(".grid").append(html);
 	}
 	else if(chk == 'U') {
 		$("#"+id).html(html);
@@ -170,6 +170,11 @@ function shopMake(chk, data) {
 				html += '</div>';
 				html += '</li>';
 				$("#"+id).append(html);
+			});
+			$('.grid').masonry({
+				itemSelector: '.grid-item',
+				columnWidth: '.grid-sizer',
+				percentPosition: true
 			});
 		});
 	}
