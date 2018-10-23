@@ -147,20 +147,30 @@ function shopMake(chk, data) {
 	html += '<button class="btn btn-primary shop_wr2" onclick="shopAdd2(this)">저장</button>';
 	html += '</div>';
 	html += '</li>';
-	if(data.val().sub) {
-		db.ref("root/shop/"+id+"/sub").once("value").then(function(snapshot){
-			snapshot.forEach(function(item){
-				console.log(item.key);
-				console.log(item.val());
-			});
-		});
-	}
 	if(chk == 'C') {
 		html += '</ul>';
 		$("#shop_wrap").append(html);
 	}
 	else if(chk == 'U') {
 		$("#"+id).html(html);
+	}
+	if(data.val().sub) {
+		db.ref("root/shop/"+id+"/sub").once("value").then(function(snapshot){
+			snapshot.forEach(function(item){
+				html  = '<li class="shop_li2 clear" id="'+item.key+'">';
+				html += '<div>';
+				html += '<input type="text" value="'+item.val().title+'" class="title form-control" placeholder="제목">';
+				html += '<input type="text" value="'+item.val().icon+'" class="icon form-control" placeholder="아이콘">';
+				html += '<input type="text" value="'+item.val().color+'" class="color form-control" placeholder="아이콘컬러">';
+				html += '<input type="text" value="'+item.val().link+'" class="link form-control" placeholder="링크">';
+				html += '</div>';
+				html += '<div>';
+				html += '<button class="btn btn-primary shop_wr2" onclick="shopAdd2(this)">저장</button>';
+				html += '</div>';
+				html += '</li>';
+				$("#"+id).append(html);
+			});
+		});
 	}
 }
 
