@@ -111,6 +111,7 @@ function homeDel(obj) {
 }
 
 /***** SHOP ******/
+//페이지가 생성될 때 한번 실행되며 shop레퍼런스에 콜백을 링크한다.
 function initShop() {
 	$(".grid > ul").remove();
 	ref = db.ref("root/shop");
@@ -120,6 +121,7 @@ function initShop() {
 }
 initShop();
 
+//chk 변수의 값(C, U)에 따라 ul을 생성 또는 수정한다.
 function shopMake(chk, data) {
 	var id = data.key;
 	var html = '';
@@ -175,19 +177,25 @@ function shopMake(chk, data) {
 	}
 }
 
+//child_added 콜백
 function shopAdd(data) {
 	var id = data.key;
 	shopMake('C', data);
 }
 
+//child_remove 콜백
 function shopRev(data) {
-	console.log(data);
+	var id = data.key;
+	$("#"+id).remove();
 }
 
+//child_changed 콜백
 function shopChg(data) {
 	var id = data.key;
 	shopMake('U', data);
 }
+
+//1차 카테고리 생성
 $(".shop_wr").click(function () {
 	var title = $(".shop_li0 .title").val();
 	var icon = $(".shop_li0 .icon").val();
@@ -206,6 +214,8 @@ $(".shop_wr").click(function () {
 		}).key;
 	}
 });
+
+//2차 카테고리 생성
 function shopAdd2(obj) {
 	var div = $(obj).parent().prev();
 	var idUl = $(obj).parent().parent().parent().attr("id");
@@ -221,6 +231,52 @@ function shopAdd2(obj) {
 		link: link
 	}).key;
 }
+
+//1차 카테고리 삭제
+function shopDel(obj) {
+	if(confirm("정말로 삭제하시겠습니까?\n1차 카테고리 삭제시 하위 카테고리도 삭제됩니다.")) {
+		var id = $(obj).parent().parent().parent().attr("id");
+		db.ref("root/shop/"+id).remove();
+	}
+}
+
+//1차 카테고리 수정
+function shopUp(obj) {
+	var id = $(obj).parent().parent().parent().attr("id");
+	var div = $(obj).parent().prev();
+	var title = $(".title", div).val();
+	var icon = $(".icon", div).val();
+	var color = $(".color", div).val();
+	var link = $(".link", div).val();
+	if(title == "") {
+		alert("카테고리 명을 입력하세요.");
+		$(".title", div).focus();
+		return false;
+	}
+	else {
+		db.ref("root/shop/"+id).update({
+			title: title,
+			icon: icon,
+			color: color,
+			link: link
+		});
+	}
+}
+
+//2차 카테고리 삭제
+function shopDel2(obj) {
+
+}
+
+//2차 카테고리 수정
+function shopUp2(obj) {
+
+}
+
+
+
+
+
 
 /***** UI ******/
 $(".nav").on("click", function () {
