@@ -65,6 +65,8 @@ function shopChg(data) {
 function shopMake(chk, data) {
 	var id = data.key;
 	var v = data.val();
+	var cnt = 0;
+	var wid = 0;
 	var html = '';
 	if(chk == "C") html = '<ul id="'+id+'">';
 	html += '<li class="title">';
@@ -83,21 +85,32 @@ function shopMake(chk, data) {
 	else {
 		$("#"+id).html(html);
 	}
+	//ul의 개수에 따른 width 변화 
+	cnt = $("#modal1 > ul").length;
+	wid = 100/cnt + "%";
+	$("#modal1 > ul").css("width", wid);
 	
-	/*
-	for (var j = 0; j < data.result[i].sub.length; j++) {
-		//console.log(data.result[i].sub[j].title);
-		html += '<li class="cont">';
-		html += '<a href="' + data.result[i].sub[j].link + '">';
-		html += data.result[i].sub[j].title;
-		html += '</a>';
-		html += '<div class="tooltip" style="background:' + data.result[i].sub[j].color + '">';
-		html += data.result[i].sub[j].icon;
-		html += '<div style="background:' + data.result[i].sub[j].color + '"></div>';
-		html += '</div>';
-		html += '</li>';
-	}
-	*/
+	//2차 카테고리 생성
+	$("#modal1 > ul").each(function(i){
+		var id = $(this).attr("id");
+		db.ref("root/shop/"+id+"/sub/").once("value").then(function(snapshot){
+			$("#"+id).find(".cont").remove();
+			snapshot.forEach(function(item){
+				var id2 = item.key;
+				var v = item.val();
+				var html  = '<li class="cont" id="'+id2+'">';
+				html += '<a href="'+v.link+'">'+v.title+'</a>';
+				if(v.icon) {
+					html += '<div class="tooltip" style="background:'+v.color+'">';
+					html += v.icon;
+					html += '<div style="background:'+v.color+'"></div>';
+					html += '</div>';
+				}
+				html += '</li>';
+				$("#"+id).append(html);
+			});
+		});
+	});
 }
 /***** UI *****/
 $(".searchs .hand").click(function () {
