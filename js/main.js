@@ -91,9 +91,9 @@ function shopMake(chk, data) {
 	$("#modal1 > ul").css("width", wid);
 	
 	//2차 카테고리 생성
-	$("#modal1 > ul").each(function(i){
+	$("#modal1 > ul").each(function(){
 		var id = $(this).attr("id");
-		db.ref("root/shop/"+id+"/sub/").once("value").then(function(snapshot){
+		db.ref("root/shop/"+id+"/sub").once("value").then(function(snapshot){
 			$("#"+id).find(".cont").remove();
 			snapshot.forEach(function(item){
 				var id2 = item.key;
@@ -108,10 +108,11 @@ function shopMake(chk, data) {
 				}
 				html += '</li>';
 				$("#"+id).append(html);
-			});
+			});	
 		});
 	});
 }
+
 /***** UI *****/
 $(".searchs .hand").click(function () {
 	$(".search_catelist").stop().slideToggle(100);
