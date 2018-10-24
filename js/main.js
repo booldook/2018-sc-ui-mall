@@ -45,7 +45,61 @@ function homeChg(data) {
 	$("span", ul).html(data.val().title);
 }
 
-
+/***** SHOP ******/
+(function initShop() {
+	ref = db.ref("root/shop");
+	ref.on("child_added", shopAdd);
+	ref.on("child_removed", shopRev);
+	ref.on("child_changed", shopChg);
+})();
+function shopAdd(data) {
+	shopMake("C", data);
+}
+function shopRev(data) {
+	var id = data.key;
+	$("#"+id).remove();
+}
+function shopChg(data) {
+	shopMake("U", data);
+}
+function shopMake(chk, data) {
+	var id = data.key;
+	var v = data.val();
+	var html = '';
+	if(chk == "C") html = '<ul id="'+id+'">';
+	html += '<li class="title">';
+	html += '<a href="'+v.link+'">'+v.title+'</a>';
+	if(v.icon) {
+		html += '<div class="tooltip" style="background:'+v.color+'">';
+		html += v.icon;
+		html += '<div style="background:'+v.color+'"></div>';
+		html += '</div>';
+	}
+	html += '</li>';
+	if(chk == "C") {
+		html += '</ul>';
+		$("#modal1").append(html);
+	}
+	else {
+		$("#"+id).html(html);
+	}
+	
+	/*
+	for (var j = 0; j < data.result[i].sub.length; j++) {
+		//console.log(data.result[i].sub[j].title);
+		html += '<li class="cont">';
+		html += '<a href="' + data.result[i].sub[j].link + '">';
+		html += data.result[i].sub[j].title;
+		html += '</a>';
+		html += '<div class="tooltip" style="background:' + data.result[i].sub[j].color + '">';
+		html += data.result[i].sub[j].icon;
+		html += '<div style="background:' + data.result[i].sub[j].color + '"></div>';
+		html += '</div>';
+		html += '</li>';
+	}
+	*/
+}
+/***** UI *****/
 $(".searchs .hand").click(function () {
 	$(".search_catelist").stop().slideToggle(100);
 });
@@ -61,48 +115,7 @@ function goUrl(url) {
 	location.href = url;
 }
 
-/***** 카테고리 1 ******/
-$.ajax({
-	url: "../json/cate1.json",
-	type: "get",
-	dataType: "json",
-	data: {},
-	success: function (data) {
-		var cnt = data.result.length;
-		var style = 'style="width:' + (100 / cnt + '%') + ';"';
-		var html;
-		for (var i = 0; i < cnt; i++) {
-			//console.log(data.result[i].main.title);
-			html = '<ul ' + style + '>';
-			html += '<li class="title">';
-			html += '<a href="' + data.result[i].main.link + '">';
-			html += data.result[i].main.title;
-			html += '</a>';
-			html += '<div class="tooltip" style="background:' + data.result[i].main.color + '">';
-			html += data.result[i].main.icon;
-			html += '<div style="background:' + data.result[i].main.color + '"></div>';
-			html += '</div>';
-			html += '</li>';
-			for (var j = 0; j < data.result[i].sub.length; j++) {
-				//console.log(data.result[i].sub[j].title);
-				html += '<li class="cont">';
-				html += '<a href="' + data.result[i].sub[j].link + '">';
-				html += data.result[i].sub[j].title;
-				html += '</a>';
-				html += '<div class="tooltip" style="background:' + data.result[i].sub[j].color + '">';
-				html += data.result[i].sub[j].icon;
-				html += '<div style="background:' + data.result[i].sub[j].color + '"></div>';
-				html += '</div>';
-				html += '</li>';
-			}
-			html += '</ul>';
-			$("#modal1").append(html);
-		}
-	},
-	error: function (xhr, status, error) {
-		console.log(xhr, status, error);
-	}
-});
+
 
 /***** 카테고리 2 ******/
 $.ajax({
