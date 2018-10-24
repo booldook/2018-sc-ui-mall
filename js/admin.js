@@ -265,16 +265,36 @@ function shopUp(obj) {
 
 //2차 카테고리 삭제
 function shopDel2(obj) {
-
+	if(confirm("정말로 삭제하시겠습니까?")) {
+		var id = $(obj).parent().parent().parent().attr("id");	//ul
+		var id2 = $(obj).parent().parent().attr("id");	//li
+		db.ref("root/shop/"+id+"/sub/"+id2).remove();
+	}
 }
 
 //2차 카테고리 수정
 function shopUp2(obj) {
-
+	var id = $(obj).parent().parent().parent().attr("id");	//ul
+	var id2 = $(obj).parent().parent().attr("id");	//li
+	var div = $(obj).parent().prev();
+	var title = $(".title", div).val();
+	var icon = $(".icon", div).val();
+	var color = $(".color", div).val();
+	var link = $(".link", div).val();
+	if(title == "") {
+		alert("카테고리 명을 입력하세요.");
+		$(".title", div).focus();
+		return false;
+	}
+	else {
+		db.ref("root/shop/"+id+"/sub/"+id2).update({
+			title: title,
+			icon: icon,
+			color: color,
+			link: link
+		});
+	}
 }
-
-
-
 
 
 
