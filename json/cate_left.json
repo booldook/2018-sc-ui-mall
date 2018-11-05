@@ -1,0 +1,72 @@
+{
+	"result": {
+		"cates": [{
+				"id": 0,
+				"title": "Furniture",
+				"icon": "fas fa-edit",
+				"link": "#",
+				"ajax": "test.json"
+			},{
+				"id": 0,
+				"title": "Cooking",
+				"icon": "fas fa-edit",
+				"link": "#",
+				"ajax": "test.json"
+			},{
+				"id": 0,
+				"title": "Accessories",
+				"icon": "fas fa-edit",
+				"link": "#",
+				"ajax": "test.json"
+			},{
+				"id": 0,
+				"title": "Fashion",
+				"icon": "fas fa-edit",
+				"link": "#",
+				"ajax": "test.json"
+			},{
+				"id": 0,
+				"title": "Clocks",
+				"icon": "fas fa-edit",
+				"link": "#",
+				"ajax": "test.json"
+			},{
+				"id": 0,
+				"title": "Lighting",
+				"icon": "fas fa-edit",
+				"link": "#",
+				"ajax": "test.json"
+			},{
+				"id": 0,
+				"title": "Toys",
+				"icon": "fas fa-edit",
+				"link": "#",
+				"ajax": "test.json"
+			},{
+				"id": 0,
+				"title": "Hand Made",
+				"icon": "fas fa-edit",
+				"link": "#",
+				"ajax": ""
+			},{
+				"id": 0,
+				"title": "Minimalism",
+				"icon": "fas fa-edit",
+				"link": "#",
+				"ajax": ""
+			},{
+				"id": 0,
+				"title": "Electronics",
+				"icon": "fas fa-edit",
+				"link": "#",
+				"ajax": ""
+			},{
+				"id": 0,
+				"title": "Cars",
+				"icon": "fas fa-edit",
+				"link": "#",
+				"ajax": ""
+			}
+		]
+	}	
+}
