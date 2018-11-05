@@ -1,0 +1,5 @@
+#wrap {width:100%; max-width:1200px; margin:0 auto;}
+.cates {width:270px;}
+.cates > li {padding:1em; border-bottom:1px solid #ccc; font-size:1.25em;}
+.cates > li > :first-child {margin-right:1em;}
+.cates > li > :last-child {float:right; padding-top:0.3em;}
