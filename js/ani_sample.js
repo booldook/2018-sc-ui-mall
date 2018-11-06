@@ -1,1 +1,1 @@
-var pages = new SpaAni(".page", ".ani", 500);
+var pages = new SpaAni(".section", ".ani", 300);

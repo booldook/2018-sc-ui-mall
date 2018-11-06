@@ -6,7 +6,7 @@ var SpaAni = (function(){
 		this.scTop = 0;
 		this.pos = [];
 		this.now = 0;
-		this.gap = 0;
+		this.gap = _gap;
 		$(window).resize(function(){
 			for(var i=0; i<obj.page.length; i++) {
 				obj.pos[i] = $(obj.page[i]).position().top;
