@@ -279,3 +279,20 @@ var sFn = function(data) {
 var cateAjax = new Ajax("../json/cate_left.json");
 //cateAjax.addData({chk:0});
 cateAjax.send(sFn);
+/*
+$(".banner > li").each(function(i){
+	$(this).children("div").each(function(i){
+		$(this).css("animation-delay", i/5+"s").addClass("ban_ani");
+	});
+});
+*/
+var banNow = 0;
+$(".banner").click(function(){
+	$(this).children("li").hide();
+	$(this).children("li").eq(banNow).show();
+	$(this).children("li").eq(banNow).children("div").each(function(i){
+		$(this).css("animation-delay", i/5+"s").addClass("ban_ani");
+	});
+	if(banNow == 2) banNow = -1;
+	banNow++;
+}).trigger("click");
