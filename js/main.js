@@ -290,6 +290,7 @@ var banNow = 0;
 $(".banner").click(function(){
 	$(this).children("li").hide();
 	$(this).children("li").eq(banNow).show();
+	$(this).children("li").eq(banNow).children(".ban_img").addClass("img_ani");
 	$(this).children("li").eq(banNow).children("div").each(function(i){
 		$(this).css("animation-delay", i/5+"s").addClass("ban_ani");
 	});
