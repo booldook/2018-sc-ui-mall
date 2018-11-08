@@ -23,7 +23,7 @@ var SpaAni = (function(){
 		}
 		$(obj.page[obj.now]).find(obj.elem).each(function(){
 			var cls = $(this).data("ani");
-			$(this).addClass(cls);
+			$(this).addClass("card");
 		});
 	};
 	return SpaAni;

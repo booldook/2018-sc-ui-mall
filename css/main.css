@@ -82,9 +82,12 @@ position: absolute; top:0; right:-0.5em;}
 .post .post_cnt {color:#999; font-size:0.75em;}
 .post .post_comment {color:#999; font-size:0.75em;}
 
-.banners .cate {width:270px; border-right:1px solid #ccc;}
-.banners .banner {width:calc(100% - 270px);}
+.banners .cate {width:270px; border-right:1px solid #ccc; float:left;}
+.banners .banner {width:calc(100% - 270px); float:left;}
 .banners .cate li {padding:0.75em; font-size:1.25em; border-bottom:1px solid #ccc;}
 .banners .cate li > a {margin-left:1em; text-decoration:none;}
 .banners .cate li > a:hover {color:#84b736;}
 .banners .cate li .fa-angle-right {color:#aaa; float:right; padding-top:0.2em;}
+
+.banner {background-color:#f8f8f8; max-height:490px; padding:40px 0;}
+.banner .ban_img {float:right; width:40%;}
