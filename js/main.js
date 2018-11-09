@@ -287,13 +287,24 @@ $(".banner > li").each(function(i){
 });
 */
 var banNow = 0;
-$(".banner").click(function(){
-	$(this).children("li").hide();
-	$(this).children("li").eq(banNow).show();
-	$(this).children("li").eq(banNow).children(".ban_img").addClass("img_ani");
-	$(this).children("li").eq(banNow).children("div").each(function(i){
+$(".banners .rt_arrow").click(function(){
+	$(".banner").children("li").hide();
+	$(".banner").children("li").eq(banNow).show();
+	$(".banner").children("li").eq(banNow).children(".ban_img").addClass("img_ani");
+	$(".banner").children("li").eq(banNow).children("div").each(function(i){
 		$(this).css("animation-delay", i/5+"s").addClass("ban_ani");
 	});
 	if(banNow == 2) banNow = -1;
 	banNow++;
 }).trigger("click");
+
+$(".banners").mousemove(function(evt){
+	var delta = 50;
+	var cX = evt.clientX;
+	var cY = evt.clientY;
+	var iX = $(this).find(".ban_img").width()/2;
+	var iY = $(this).find(".ban_img").height()/2;
+	var mX = (iX - cX)/delta;
+	var mY = (iY - cY)/delta;
+	$(this).find(".ban_img").css("transform", "translate("+mX+"px, "+mY+"px)");
+});

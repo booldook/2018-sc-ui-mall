@@ -100,6 +100,9 @@ position: absolute; top:0; right:-0.5em;}
 .banner .icon {width:30px; height:30px; border-radius:15px 4px 15px 15px; margin-left:15px;}
 .banner .ban_price {font-size:3em; color:#84b736; opacity:0; width:40%; margin-top:40px;}
 .banner > :last-child {text-align:center;}
+.banners .rt_arrow {width:40px; height:50px; position: absolute; top:calc(50% - 25px); right:-200px; background:#ccc; font-size:2em; line-height:50px; color:#000; text-align:center; cursor:pointer;}
+.banners .rt_arrow:hover {font-size:3em;}
+
 
 .ban_ani {animation-name:ban-ani; animation-duration:0.5s; animation-fill-mode:forwards;}
 .img_ani {animation-name:img-ani; animation-duration:0.5s; animation-fill-mode:forwards; animation-timing-function:ease-out;}
@@ -108,6 +111,6 @@ position: absolute; top:0; right:-0.5em;}
 	100% {opacity:1; transform:translateY(0);}
 }
 @keyframes img-ani {
-	0% {opacity: 0; transform: translateX(400px);}
-	100% {opacity: 1; transform: translateX(0);}
+	0% {opacity: 0; right:-500px;}
+	100% {opacity: 1; right:0;}
 }
