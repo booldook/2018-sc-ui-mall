@@ -58,7 +58,7 @@ position: absolute; top:0; right:-0.5em;}
 .navs > .etc > :nth-child(2) {padding:0 0.5em;}
 
 .menu > ul > li {cursor:pointer;}
-.menu_modal {background-color:#fff; top:51px; left:0; position:absolute !important; width:100%; display: none; padding:3em 0; border-bottom:1px solid #ccc;}
+.menu_modal {background-color:#fff; top:51px; left:0; position:absolute !important; width:100%; display: none; padding:3em 0; border-bottom:1px solid #ccc; z-index:10;}
 .menu_modal a {text-decoration:none;}
 .menu_modal li {line-height:2.5em; position:relative;}
 .menu_modal .tooltip {position:absolute; padding:0.15em; top:-1.20em; left:0; opacity:1; color:white; font-size:0.6em;}
@@ -101,6 +101,8 @@ position: absolute; top:0; right:-0.5em;}
 .fur_panel > li {padding:5px 0;}
 .fur_panel > li:hover {color:#84b736;}
 .fur_panel > li:nth-child(2) {font-weight:bold;}
+.fur_brand_panel {width:100%; position:absolute; bottom:0; background-color:#f1f1f1;}
+.fur_brand_panel > li {float:left; width:25%; text-align:center; padding:0.5% 5%;}
 
 .banner > li {display:none;}
 .banner .ban_img {position:absolute; width:50%; right:5%; top:0;}

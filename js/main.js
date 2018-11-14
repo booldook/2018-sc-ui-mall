@@ -338,6 +338,11 @@ var sFn = function(data) {
 						html+= '<li>'+furniture[j][6]+'</li>';
 						html+= '</ul>';
 					}
+					html+= '<ul class="fur_brand_panel clear">';
+					for(var j=0; j<furnitureBrand.length; j++) {
+						html+= '<li><img src="'+furnitureBrand[j]+'" class="img w3-grayscale-max w3-opacity"></li>';
+					}
+					html+= '</ul>';
 				}
 				/***** 패널 생성.종료 *****/
 				html+= '</div>';
@@ -345,6 +350,16 @@ var sFn = function(data) {
 			html+= '</li>'
 			$(".banners .cate").append(html);
 		}
+		$(".cate > li").hover(function(){
+			$(this).find(".cate_panel").show();
+		}, function(){
+			$(this).find(".cate_panel").hide();
+		});
+		$(".fur_brand_panel img").hover(function(){
+			$(this).removeClass("w3-grayscale-max w3-opacity");
+		}, function(){
+			$(this).addClass("w3-grayscale-max w3-opacity");
+		});
 	}
 }
 var cateAjax = new Ajax("../json/cate_left.json");
