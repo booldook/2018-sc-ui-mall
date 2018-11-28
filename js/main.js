@@ -395,3 +395,11 @@ $(".banners").mousemove(function(evt){
 	$(this).find(".ban_img").css("transform", "translate("+mX+"px, "+mY+"px)");
 });
 
+/***** Featured *****/
+$(".featured_item").hover(function(){
+	$(this).find("div").stop().animate({"bottom":0}, 200);
+	$(this).find("img").css({"animation-name":"featuredAni"});
+}, function(){
+	$(this).find("div").stop().animate({"bottom":"-3rem"}, 200);
+	$(this).find("img").css({"animation-name":"featuredAniBack"});
+});
