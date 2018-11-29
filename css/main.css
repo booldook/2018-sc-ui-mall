@@ -1,4 +1,6 @@
 /***** 공통사항 *****/
+footer {padding-bottom:300px;}
+
 .wrap {max-width:1200px; margin:0 auto;}
 .arrow_down {font-size:0.5em !important;}
 .txt_green {color:#84b736;}
@@ -134,10 +136,11 @@ position: absolute; top:0; right:-0.5em;}
 
 /***** FEATURED *****/
 /* section {border:1px solid #f00;} */
-.featured {margin-top:60px; text-align:center; margin-bottom:200px;}
+.featured {margin-top:60px; text-align:center;}
 .featured > h5:nth-child(1) {color:#bbb;}
 .featured > h5:nth-child(3) {color:#999;}
 .featured > h3 {color:#333; padding:1rem 0; line-height:2rem;}
+
 .featured_items {margin-top:2rem;}
 .featured_lt {float:left; width:49%;}
 .featured_rt {float:right; width:50%;}
@@ -155,3 +158,13 @@ position: absolute; top:0; right:-0.5em;}
 	0% {transform: scale(1.3);}
 	100% {transform: scale(1);}
 }
+
+/***** Featured Products *****/
+.prds {margin-top:60px; text-align:center;}
+.prds > h5:nth-child(1) {color:#bbb;}
+.prds > h5:nth-child(3) {color:#999;}
+.prds > h3 {color:#333; padding:1rem 0; line-height:2rem;}
+
+.prd_nav {margin-top:2rem;}
+.prd_nav > li {display:inline-block; font-size:1.125rem; color:#666; font-weight:bold; margin:0 1rem; cursor:pointer; position:relative;}
+.prd_nav > li > div {width:0%; height:2px; background-color:#84b736; position:absolute;}

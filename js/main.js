@@ -395,7 +395,7 @@ $(".banners").mousemove(function(evt){
 	$(this).find(".ban_img").css("transform", "translate("+mX+"px, "+mY+"px)");
 });
 
-/***** Featured *****/
+/***** Featured Categories *****/
 $(".featured_item").hover(function(){
 	$(this).find("div").stop().animate({"bottom":0}, 200);
 	$(this).find("img").css({"animation-name":"featuredAni"});
@@ -403,3 +403,25 @@ $(".featured_item").hover(function(){
 	$(this).find("div").stop().animate({"bottom":"-3rem"}, 200);
 	$(this).find("img").css({"animation-name":"featuredAniBack"});
 });
+
+/***** Featured Products *****/
+var prdNum = 0;
+$(".prd_nav > li").click(function(){
+	prdNum = $(this).index();
+	$(".prd_nav > li").css({"color":"#666"});
+	$(".prd_nav div").css({"width":0});
+	$(this).css({"color":"#222"});
+	$(this).children("div").css({"width":"100%"});
+});
+$(".prd_nav > li").hover(function(){
+	if($(this).index() != prdNum) {
+		$(this).css({"color":"#222"});
+		$(this).children("div").stop().animate({"width":"100%"}, 100);
+	}
+},function(){
+	if($(this).index() != prdNum) {
+		$(this).css({"color":"#666"});
+		$(this).children("div").stop().animate({"width":0}, 100);
+	}
+});
+$(".prd_nav > li").eq(0).trigger("click");
