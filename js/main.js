@@ -428,7 +428,11 @@ $(".prd_nav > li").eq(0).trigger("click");
 
 $(".prd").hover(function(){
 	$(this).children(".prd_hover").stop().fadeIn(300);
-	$(this).children(".prd_hover").children(".prd_img").children("img").css({"animation-name":"prdImg"});
 }, function(){
 	$(this).children(".prd_hover").stop().fadeOut(300);
+});
+$(".prd_hover_img").hover(function(){
+	$(this).stop().animate({"opacity":1}, 200).css({"animation-name":"prdImg"});
+}, function(){
+	$(this).stop().animate({"opacity":0}, 200).css({"animation-name":"prdImgBack"});
 });

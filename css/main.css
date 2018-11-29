@@ -178,12 +178,18 @@ position: absolute; top:0; right:-0.5em;}
 .prd_price > :last-child {color:#84b736; font-size:1.25em; font-weight:bold;}
 
 .prd_hover {position:absolute; width:110%; padding:5%; left:-5%; top:-5%; border:1px solid #f1f1f1; 
-	box-shadow:0 0 5px rgba(0,0,0,0.2); display:none; background-color:#fff;}
+	box-shadow:0 0 5px rgba(0,0,0,0.2); display:none;}
+.prd_hover > li:not(:first-child) {background-color:#fff;}
 .prd_hover > .prd_img {overflow: hidden;}
 .prd_hover > .prd_img > img {animation-duration:3s; animation-fill-mode: forwards; animation-timing-function: ease-in;}
+.prd_hover_img {opacity:0;}
 @keyframes prdImg {
 	0% {transform: scale(1);}
 	100% {transform: scale(1.2);}
+}
+@keyframes prdImgBack {
+	0% {transform: scale(1.2);}
+	100% {transform: scale(1);}
 }
 
 .prd_pop {width:60px; height:60px; line-height:60px; color:#fff; font-weight:bold; font-size:1.125em; background-color: #84b736; border-radius:30px; position: absolute; top:10px; left:10px;}
