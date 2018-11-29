@@ -425,3 +425,9 @@ $(".prd_nav > li").hover(function(){
 	}
 });
 $(".prd_nav > li").eq(0).trigger("click");
+
+$(".prd").hover(function(){
+	$(this).children(".prd_hover").stop().fadeIn(500);
+}, function(){
+	$(this).children(".prd_hover").stop().fadeOut(500);
+});

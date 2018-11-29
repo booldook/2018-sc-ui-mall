@@ -168,3 +168,14 @@ position: absolute; top:0; right:-0.5em;}
 .prd_nav {margin-top:2rem;}
 .prd_nav > li {display:inline-block; font-size:1.125rem; color:#666; font-weight:bold; margin:0 1rem; cursor:pointer; position:relative;}
 .prd_nav > li > div {width:0%; height:2px; background-color:#84b736; position:absolute;}
+
+.prd_wrap {margin-top:2rem;}
+.prd {width:24%; margin:0.5%; float:left; font-size:1rem; position:relative;}
+.prd_tit {color:#555; font-size:1.25em; line-height:1.5em; padding:0.25em; font-weight:bold;}
+.prd_cate {font-size:0.875em; color:#888; padding:0.25em;}
+.prd_price {padding:0.25em;}
+.prd_price > :first-child {text-decoration:line-through; color:#aaa; font-size:1em;}
+.prd_price > :last-child {color:#84b736; font-size:1.25em; font-weight:bold;}
+
+.prd_hover {position:absolute; width:110%; padding:5%; left:-5%; top:-5%; border:1px solid #f1f1f1; 
+	box-shadow:0 0 5px rgba(0,0,0,0.2); display:none; background-color:#fff;}
