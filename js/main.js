@@ -472,10 +472,59 @@ $.ajax({
 });
 */
 
-
+// {"result":[{"title":"best", "data":[{},{}]},{...},{...}]} --> data 구조입니다.
 var prds = new Ajax("../json/prds.json");
 prds.send(resultFn);
 function resultFn(data) {
-	//여기가 실행 구문
-	console.log(data);
+	var html = '';
+	data
+
+	<ul class="prd_wrap clear">
+			<li class="prd">
+				<div class="prd_img">
+					<img src="../img/main/product-furniture-18.jpg" class="img">
+				</div>
+				<div class="prd_tit">Penatibus parturient orci morbi</div>
+				<div class="prd_cate">Toys</div>
+				<div class="prd_price">
+					<span>$449.00</span>
+					<span>$359.00</span>
+				</div>
+				<div class="prd_hover">
+					<div class="prd_img">
+						<img src="../img/main/product-furniture-18-2-430x490.jpg" class="img prd_hover_img">
+					</div>
+					<ul>
+						<li class="prd_compare">
+							<div>
+								<img src="../img/main/baseline-compare_arrows-24px.svg">
+							</div>
+						</li>
+						<li class="prd_tit">Penatibus parturient orci morbi</li>
+						<li class="prd_cate">Toys</li>
+						<li class="prd_price">
+							<span>$449.00</span>
+							<span>$359.00</span>
+						</li>
+						<li class="prd_cont">
+							Placerat tempor dolor eu leo ullamcorper et magnis habitant ultrices consectetur arcu nulla mattis fermentum adipiscing a et bibendum sed platea malesuada eget vestibulum tempor dolor eu leo ullamcorper et magnis habitant ultrices consectetur.
+							<div><i class="fa fa-ellipsis-h"></i></div>
+						</li>
+						<li class="prd_detail clear">
+							<div>
+									<a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><img src="../img/main/baseline-favorite_border-24px.svg"></a>
+							</div>
+							<ul>
+								<li>VIEW PRODUCTS</li>
+								<li><i class="fa fa-shopping-cart"></i></li>
+							</ul>
+							<div>
+									<a href="#" data-toggle="tooltip" data-placement="top" title="Search"><img src="../img/main/baseline-search-24px.svg"></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="prd_pop">-20%</div>
+			</li>
+		</ul>
 }
