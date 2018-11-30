@@ -477,54 +477,63 @@ var prds = new Ajax("../json/prds.json");
 prds.send(resultFn);
 function resultFn(data) {
 	var html = '';
-	data
-
-	<ul class="prd_wrap clear">
-			<li class="prd">
-				<div class="prd_img">
-					<img src="../img/main/product-furniture-18.jpg" class="img">
-				</div>
-				<div class="prd_tit">Penatibus parturient orci morbi</div>
-				<div class="prd_cate">Toys</div>
-				<div class="prd_price">
-					<span>$449.00</span>
-					<span>$359.00</span>
-				</div>
-				<div class="prd_hover">
-					<div class="prd_img">
-						<img src="../img/main/product-furniture-18-2-430x490.jpg" class="img prd_hover_img">
-					</div>
-					<ul>
-						<li class="prd_compare">
-							<div>
-								<img src="../img/main/baseline-compare_arrows-24px.svg">
-							</div>
-						</li>
-						<li class="prd_tit">Penatibus parturient orci morbi</li>
-						<li class="prd_cate">Toys</li>
-						<li class="prd_price">
-							<span>$449.00</span>
-							<span>$359.00</span>
-						</li>
-						<li class="prd_cont">
-							Placerat tempor dolor eu leo ullamcorper et magnis habitant ultrices consectetur arcu nulla mattis fermentum adipiscing a et bibendum sed platea malesuada eget vestibulum tempor dolor eu leo ullamcorper et magnis habitant ultrices consectetur.
-							<div><i class="fa fa-ellipsis-h"></i></div>
-						</li>
-						<li class="prd_detail clear">
-							<div>
-									<a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><img src="../img/main/baseline-favorite_border-24px.svg"></a>
-							</div>
-							<ul>
-								<li>VIEW PRODUCTS</li>
-								<li><i class="fa fa-shopping-cart"></i></li>
-							</ul>
-							<div>
-									<a href="#" data-toggle="tooltip" data-placement="top" title="Search"><img src="../img/main/baseline-search-24px.svg"></a>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="prd_pop">-20%</div>
-			</li>
-		</ul>
+	var li;
+	for(var i=0; i<data.result.length; i++){
+		html = '<ul class="prd_wrap clear">';
+		for(var j=0; j<data.result[i].data.length; j++) {
+			li = data.result[i].data[j];
+			html+= '<li class="prd">';
+			html+= '<div class="prd_img">';
+			html+= '<img src="'+li.img[0]+'" class="img">';
+			html+= '</div>';
+			html+= '<div class="prd_tit">'+li.title+'</div>';
+			html+= '<div class="prd_cate">'+li.cate+'</div>';
+			html+= '<div class="prd_price">';
+			html+= '<span>'+li.price[0]+'</span>';
+			html+= '<span>'+li.price[1]+'</span>';
+			html+= '</div>';
+			html+= '<div class="prd_hover">';
+			html+= '<div class="prd_img">';
+			html+= '<img src="'+li.img[1]+'" class="img prd_hover_img">';
+			html+= '</div>';
+			html+= '<ul>';
+			html+= '<li class="prd_compare">';
+			html+= '<div>';
+			html+= '<img src="../img/main/baseline-compare_arrows-24px.svg">';
+			html+= '</div>';
+			html+= '</li>';
+			html+= '<li class="prd_tit">'+li.title+'</li>';
+			html+= '<li class="prd_cate">'+li.cate+'</li>';
+			html+= '<li class="prd_price">';
+			html+= '<span>'+li.price[0]+'</span>';
+			html+= '<span>'+li.price[1]+'</span>';
+			html+= '</li>';
+			html+= '<li class="prd_cont">';
+			html+= li.cont;
+			html+= '<div><i class="fa fa-ellipsis-h"></i></div>';
+			html+= '</li>';
+			html+= '<li class="prd_detail clear">';
+			html+= '<div>';
+			html+= '<a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">';
+			html+= '<img src="../img/main/baseline-favorite_border-24px.svg">';
+			html+= '</a>';
+			html+= '</div>';
+			html+= '<ul>';
+			html+= '<li>VIEW PRODUCTS</li>';
+			html+= '<li><i class="fa fa-shopping-cart"></i></li>';
+			html+= '</ul>';
+			html+= '<div>';
+			html+= '<a href="#" data-toggle="tooltip" data-placement="top" title="Search">';
+			html+= '<img src="../img/main/baseline-search-24px.svg">';
+			html+= '</a>';
+			html+= '</div>';
+			html+= '</li>';
+			html+= '</ul>';
+			html+= '</div>';
+			if(li.pct > 0) html+= '<div class="prd_pop">-'+li.pct+'%</div>';
+			html+= '</li>';
+		}
+		html+= '</ul>';
+		$(".prds").append(html);
+	}
 }
