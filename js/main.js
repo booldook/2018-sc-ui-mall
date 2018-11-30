@@ -426,6 +426,10 @@ $(".prd_nav > li").hover(function(){
 });
 $(".prd_nav > li").eq(0).trigger("click");
 
+for(var i=0; i<7; i++) {
+	$(".prd_wrap").append($(".prd").eq(0).clone());
+}
+
 $(".prd").hover(function(){
 	$(this).children(".prd_hover").stop().fadeIn(300);
 	$(this).find(".prd_compare").find("div").stop().animate({"top":"-43px"}, 300);	
@@ -437,6 +441,11 @@ $(".prd").hover(function(){
 			$(this).hide(0);
 		});
 	}
+	$(this).find(".prd_detail").children("ul").hover(function(){
+		$(this).children(":first-child").stop().animate({"margin-top":"-38px"}, 200);
+	}, function(){
+		$(this).children(":first-child").stop().animate({"margin-top":0}, 200);
+	});
 }, function(){
 	$(this).children(".prd_hover").stop().fadeOut(300);
 	$(this).find(".prd_compare").find("div").stop().animate({"top":0}, 300);
@@ -449,3 +458,5 @@ $(".prd_hover_img").hover(function(){
 }, function(){
 	$(this).stop().animate({"opacity":0}, 200).css({"animation-name":"prdImgBack"});
 });
+
+$('[data-toggle="tooltip"]').tooltip(); 
