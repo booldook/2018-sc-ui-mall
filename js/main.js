@@ -428,13 +428,21 @@ $(".prd_nav > li").eq(0).trigger("click");
 
 $(".prd").hover(function(){
 	$(this).children(".prd_hover").stop().fadeIn(300);
-	$(this).find(".prd_compare").find("div").stop().animate({"top":"-43px"}, 300);
-	if ($(".prd_cont")[0].offsetHeight < $(".prd_cont")[0].scrollHeight) {
-		//overflow가 발생한 상태	
+	$(this).find(".prd_compare").find("div").stop().animate({"top":"-43px"}, 300);	
+	if($(this).find(".prd_cont")[0].offsetHeight < $(this).find(".prd_cont")[0].scrollHeight) {
+		console.log("overflow");
+		$(this).find(".prd_cont").children("div").stop().animate({"bottom":0}, 200);
+		$(this).find(".prd_cont").children("div").click(function(){
+			$(this).parent().css({"height":"auto"});
+			$(this).hide(0);
+		});
 	}
 }, function(){
 	$(this).children(".prd_hover").stop().fadeOut(300);
 	$(this).find(".prd_compare").find("div").stop().animate({"top":0}, 300);
+	if($(this).find(".prd_cont")[0].offsetHeight < $(this).find(".prd_cont")[0].scrollHeight) {
+		$(this).find(".prd_cont").children("div").stop().animate({"bottom":"-20px"}, 200);
+	}
 });
 $(".prd_hover_img").hover(function(){
 	$(this).stop().animate({"opacity":1}, 200).css({"animation-name":"prdImg"});
