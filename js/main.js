@@ -407,7 +407,11 @@ $(".featured_item").hover(function(){
 /***** Featured Products *****/
 var prdNum = 0;
 $(".prd_nav > li").click(function(){
+	$(".prd_wrap").eq(prdNum).stop().animate({"top":"5rem", "opacity":0}, 500, function(){
+		$(this).css({"display":"none"});
+	});
 	prdNum = $(this).index();
+	$(".prd_wrap").eq(prdNum).css({"display":"block"}).stop().animate({"top":0, "opacity":1}, 500);
 	$(".prd_nav > li").css({"color":"#666"});
 	$(".prd_nav div").css({"width":0});
 	$(this).css({"color":"#222"});
@@ -534,6 +538,6 @@ function resultFn(data) {
 			html+= '</li>';
 		}
 		html+= '</ul>';
-		$(".prds").append(html);
+		$(".prd_out_wrap").append(html);
 	}
 }
