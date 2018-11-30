@@ -190,11 +190,13 @@ position: absolute; top:0; right:-0.5em;}
 	0% {transform: scale(1.2);}
 	100% {transform: scale(1);}
 }
-.prd_hover > .prd_compare {position:relative; line-height:1.5em; padding:0.75em 0; 
-	border-top:1px solid #eee; border-bottom:1px solid #eee; text-align:right;}
+.prd_hover > .prd_compare {position:relative; width:100%;}
+.prd_hover > .prd_compare > div {position:absolute; line-height:24px; padding:8px 0; 
+		border-top:1px solid #eee; border-bottom:1px solid #eee; text-align:right; width:100%; background-color:#fff;}	
 .prd_hover > .prd_tit {position:relative;}
 .prd_hover > .prd_cate {position:relative;}
 .prd_hover > .prd_price {position:relative;}
+.prd_hover > .prd_cont {position:relative; font-size:1.25em; height:6em; line-height:1.5em; overflow:hidden;}
 
 
 

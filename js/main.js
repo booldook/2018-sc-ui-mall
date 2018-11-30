@@ -428,8 +428,13 @@ $(".prd_nav > li").eq(0).trigger("click");
 
 $(".prd").hover(function(){
 	$(this).children(".prd_hover").stop().fadeIn(300);
+	$(this).find(".prd_compare").find("div").stop().animate({"top":"-43px"}, 300);
+	if ($(".prd_cont")[0].offsetHeight < $(".prd_cont")[0].scrollHeight) {
+		//overflow가 발생한 상태	
+	}
 }, function(){
 	$(this).children(".prd_hover").stop().fadeOut(300);
+	$(this).find(".prd_compare").find("div").stop().animate({"top":0}, 300);
 });
 $(".prd_hover_img").hover(function(){
 	$(this).stop().animate({"opacity":1}, 200).css({"animation-name":"prdImg"});
