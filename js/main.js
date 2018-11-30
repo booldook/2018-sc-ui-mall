@@ -426,10 +426,6 @@ $(".prd_nav > li").hover(function(){
 });
 $(".prd_nav > li").eq(0).trigger("click");
 
-for(var i=0; i<7; i++) {
-	$(".prd_wrap").append($(".prd").eq(0).clone());
-}
-
 $(".prd").hover(function(){
 	$(this).children(".prd_hover").stop().fadeIn(300);
 	$(this).find(".prd_compare").find("div").stop().animate({"top":"-43px"}, 300);	
@@ -460,3 +456,26 @@ $(".prd_hover_img").hover(function(){
 });
 
 $('[data-toggle="tooltip"]').tooltip(); 
+
+/*
+$.ajax({
+	url: "../json/prds.json",
+	type: "post",
+	dataType: "json",
+	success: function(data) {
+		//여기가 실행 구문
+		console.log(data);
+	},
+	error: function(xhr, status, error) {
+		console.log(xhr, status, error);
+	}
+});
+*/
+
+
+var prds = new Ajax("../json/prds.json");
+prds.send(resultFn);
+function resultFn(data) {
+	//여기가 실행 구문
+	console.log(data);
+}
