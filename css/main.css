@@ -223,4 +223,6 @@ position: absolute; top:0; right:-0.5em;}
 .fban .wrap > div > :nth-child(3) > li > :first-child {border-bottom: 1px solid rgba(255,255,255, 0.2);}
 .fban .wrap > div > :nth-child(3) > li > :last-child {font-style:italic;}
 .fban .wrap > div > :nth-child(4) {margin-top:2rem;}
-.fban .wrap > div > :nth-child(4) > :first-child {font-size:3em;}
+.fban .wrap > div > :nth-child(4) > :first-child {font-size:3em; line-height:1.125em;}
+.fban .wrap > div > :nth-child(4) .bt_addcart {padding:1rem 2rem; border:1px solid #fff; background-color:transparent; font-size:1.125em; margin-left:3rem;}
+.fban .wrap > div > :nth-child(4) .bt_addcart:hover {border-width:2px; transform:translate(-1px, -1px);}
