@@ -2,6 +2,7 @@
 $('body').imagesLoaded()
   .done( function( instance ) {
 		$(".loader").hide(0);
+		$(".prd_out_wrap").css({"height":$(".prd_wrap").eq(0).height()+"px"});
 		console.log('all images successfully loaded');
   })
   .progress( function( instance, image ) {
@@ -487,8 +488,9 @@ function resultFn(data) {
 	}
 	//생성완료된 후 이벤트 처리
 	$(".prd_nav > li").click(function(){
+		$(".prd_out_wrap").css({"height":$(".prd_wrap").eq(prdNum).height()+"px"});
 		$(".prd_wrap").eq(prdNum).stop().animate({"top":"5rem", "opacity":0}, 500, function(){
-			$(this).css({"display":"none"});
+			$(this).css({"display":"none"});	
 		});
 		prdNum = $(this).index();
 		$(".prd_wrap").eq(prdNum).css({"display":"block"}).stop().animate({"top":0, "opacity":1}, 500);

@@ -206,3 +206,10 @@ position: absolute; top:0; right:-0.5em;}
 .prd_hover .prd_detail > :nth-child(3) {float:left; width:25%; padding:8px 0;} 
 
 .prd_pop {width:60px; height:60px; line-height:60px; color:#fff; font-weight:bold; font-size:1.125em; background-color: #84b736; border-radius:30px; position: absolute; top:10px; left:10px;}
+
+/***** 하단 배너 *****/
+.fbans {width:100%; margin-top:3rem; background-color:#84b736;}
+.fban {width:100%; position:relative;}
+.fban > li {width:100%; position:absolute;}
+.fban .wrap {overflow:hidden;}
+.fban .wrap > span {font-size:200px;}
