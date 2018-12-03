@@ -2,7 +2,6 @@
 $('body').imagesLoaded()
   .done( function( instance ) {
 		$(".loader").hide(0);
-		$(".prd_out_wrap").css({"height":$(".prd_wrap").eq(0).height()+"px"});
 		console.log('all images successfully loaded');
   })
   .progress( function( instance, image ) {
@@ -485,6 +484,9 @@ function resultFn(data) {
 		}
 		html+= '</ul>';
 		$(".prd_out_wrap").append(html);
+		$(".prd_out_wrap").imagesLoaded().done( function( instance ) {
+			$(".prd_out_wrap").css({"height":$(".prd_wrap").eq(0).height()+"px"});
+		});
 	}
 	//생성완료된 후 이벤트 처리
 	$(".prd_nav > li").click(function(){

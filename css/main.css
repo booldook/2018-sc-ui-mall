@@ -170,7 +170,7 @@ position: absolute; top:0; right:-0.5em;}
 .prd_nav > li > div {width:0%; height:2px; background-color:#84b736; position:absolute;}
 
 .prd_out_wrap {margin-top:2rem; position:relative;}
-.prd_wrap {display:none; position:absolute; top:5rem; opacity:0; width:100%;}
+.prd_wrap {display:none; position:relative; top:5rem; opacity:0; width:100%;}
 .prd {width:24%; margin:0.5%; float:left; font-size:1rem; position:relative;}
 .prd_tit {color:#555; font-size:1.25em; line-height:1.5em; padding:0.25em; font-weight:bold;}
 .prd_cate {font-size:0.875em; color:#888; padding:0.25em;}
@@ -180,7 +180,7 @@ position: absolute; top:0; right:-0.5em;}
 
 .prd_hover {position:absolute; width:110%; padding:5% 5% 0 5%; left:-5%; top:-5%; border:1px solid #f1f1f1; 
 	box-shadow:0 0 5px rgba(0,0,0,0.2); display:none; z-index:3;}
-.prd_hover > ul {background-color:#fff; padding-bottom:5%;}
+.prd_hover > ul {background-color:#fff; width:110%; margin-left:-5%; padding:0 5% 5% 5%;}
 .prd_hover > .prd_img {overflow: hidden;}
 .prd_hover > .prd_img > img {animation-duration:3s; animation-fill-mode: forwards; animation-timing-function: ease-in; opacity:0;}
 @keyframes prdImg {
