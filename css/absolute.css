@@ -1,0 +1,8 @@
+.wrap {width:100%; position: relative;}
+.box {width:80%; left:10%; position: absolute;}
+.out1 {border:2px solid #f00;}
+.out2 {border:2px solid #0f0;}
+.out3 {border:2px solid #00f;}
+.in1 {max-width:500px;}
+.in2 {font-size:100px;}
+.in3 {max-width:500px;}

@@ -1,13 +1,23 @@
+/***** 자동 높이 계산 함수 *****/
+function autoHeight() {
+	$(".hei-wrap").imagesLoaded().done(heiCalc);
+	$(window).resize(heiCalc);
+	function heiCalc() {
+		$(".hei-wrap").each(function(){
+			$(this).height($(this).find(".hei-elem").height());
+		});	
+	}
+}
+autoHeight();
+
 /***** 이미지 로더 *****/
-$('body').imagesLoaded()
-  .done( function( instance ) {
-		$(".loader").hide(0);
-		console.log('all images successfully loaded');
-  })
-  .progress( function( instance, image ) {
-    var result = image.isLoaded ? 'loaded' : 'broken';
-    console.log( 'image is ' + result + ' for ' + image.img.src );
-  });
+$('body').imagesLoaded().done( function( instance ) {
+	$(".loader").hide(0);
+	console.log('all images successfully loaded');
+}).progress( function( instance, image ) {
+	var result = image.isLoaded ? 'loaded' : 'broken';
+	console.log( 'image is ' + result + ' for ' + image.img.src );
+});
 
 /***** firebase 초기 변수 *****/
 var config = {
@@ -428,7 +438,7 @@ function resultFn(data) {
 	var html = '';
 	var li;
 	for(var i=0; i<data.result.length; i++){
-		html = '<ul class="prd_wrap clear">';
+		html = '<ul class="prd_wrap clear hei-elem">';
 		for(var j=0; j<data.result[i].data.length; j++) {
 			li = data.result[i].data[j];
 			html+= '<li class="prd">';
@@ -484,13 +494,10 @@ function resultFn(data) {
 		}
 		html+= '</ul>';
 		$(".prd_out_wrap").append(html);
-		$(".prd_out_wrap").imagesLoaded().done( function( instance ) {
-			$(".prd_out_wrap").css({"height":$(".prd_wrap").eq(0).height()+"px"});
-		});
+		autoHeight();
 	}
 	//생성완료된 후 이벤트 처리
 	$(".prd_nav > li").click(function(){
-		$(".prd_out_wrap").css({"height":$(".prd_wrap").eq(prdNum).height()+"px"});
 		$(".prd_wrap").eq(prdNum).stop().animate({"top":"5rem", "opacity":0}, 500, function(){
 			$(this).css({"display":"none"});	
 		});
@@ -544,3 +551,26 @@ function resultFn(data) {
 	});
 	$('[data-toggle="tooltip"]').tooltip(); 
 }
+
+/***** 하단 배너 *****/
+function fbanInit() {
+	$(window).resize(function(){
+		//본 작업을 진행하는 이유는 absolute 되어 있는 객체의 높이를 계산하기 위해서..
+	}).trigger("resize");
+	$(".fban").append($(".fban > li").eq(0).clone());
+	$(".fban > li").each(function(i){
+		$(this).css({"left":i*100+"%"});
+	});
+	$("#fban_lt").click(function(){
+
+	});
+	$("#fban_rt").click(function(){
+
+	});
+	$("#fban_pager > i").click(function(){
+		
+	});
+}
+fbanInit();
+
+
