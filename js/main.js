@@ -553,36 +553,34 @@ function resultFn(data) {
 }
 
 /***** 하단 배너 *****/
-var fNum = 0;
-var fLen = 0;
-var duration = 500;
-function fbanInit() {
-	$(window).resize(function(){
-		//본 작업을 진행하는 이유는 absolute 되어 있는 객체의 높이를 계산하기 위해서..
-	}).trigger("resize");
-	$(".fban > li").each(function(i){
-		$(this).css({"left":i*100+"%"});
-		$("#fban_pager").append('<i class="fa-circle"></i>');
-	});
-	fLen = $(".fban > li").length - 1;
-	$("#fban_pager > i").click(function(){
+$(window).resize(function(){
+	//본 작업을 진행하는 이유는 absolute 되어 있는 객체의 높이를 계산하기 위해서..
+}).trigger("resize");
+var fNum = 0;	//현재의 index
+var fLen = $(".fban > li").length - 1;	//마지막 index (예:5개라면 0,1,2,3,4 -> 4)
+var duration = 500;	//animate 속도
+//최초 한번 실행
+$(".fban > li").each(function(i){
+	$('<i class="fa-circle"></i>').appendTo("#fban_pager").click(function(){
 		var iNum = $(this).index();
 		if(fNum < iNum) {
 			$(".fban > li").eq(fNum + 1).hide();
 			$(".fban > li").eq(iNum).show().css({"left":"100%"});
 			fNum = iNum;
-			$(".fban > li").eq(fNum).css({"animation-name":"fbanAni", "animation-duration":duration*0.001+"s"});
-			$(".fban").stop().animate({"left":"-100%"}, duration, fbanPos);
+			fbanAni("-100%");
 		}
 		else if(fNum > iNum) {
 			$(".fban > li").eq(fNum - 1).hide();
 			$(".fban > li").eq(iNum).show().css({"left":"-100%"});
 			fNum = iNum;
-			$(".fban > li").eq(fNum).css({"animation-name":"fbanAni", "animation-duration":duration*0.001+"s"});
-			$(".fban").stop().animate({"left":"100%"}, duration, fbanPos);
+			fbanAni("100%");
 		}
 	});
-	fbanPos();
+});
+fbanPos();
+function fbanAni(val) {
+	$(".fban > li").eq(fNum).css({"animation-name":"fbanAni", "animation-duration":duration*0.001+"s"});
+	$(".fban").stop().animate({"left":val}, duration, fbanPos);
 }
 function fbanPos() {
 	$("#fban_pager > i").removeClass("fas").addClass("far");
@@ -606,14 +604,11 @@ function fbanPos() {
 $("#fban_lt").click(function(){
 	if(fNum == fLen) fNum = 0;
 	else fNum++;
-	$(".fban > li").eq(fNum).css({"animation-name":"fbanAni", "animation-duration":duration*0.001+"s"});
-	$(".fban").stop().animate({"left":"-100%"}, duration, fbanPos);
+	fbanAni("-100%");
 });
 $("#fban_rt").click(function(){
 	if(fNum == 0) fNum = fLen;
 	else fNum--;
-	$(".fban > li").eq(fNum).css({"animation-name":"fbanAni", "animation-duration":duration*0.001+"s"});
-	$(".fban").stop().animate({"left":"100%"}, duration, fbanPos);
+	fbanAni("100%");
 });
-fbanInit();
 
