@@ -210,7 +210,7 @@ position: absolute; top:0; right:-0.5em;}
 /***** 하단 배너 *****/
 .fbans {width:100%; min-height:490px; margin-top:3rem; background-color:#84b736; position:relative;}
 .fban {width:100%; position:relative;}
-.fban > li {width:100%; position:absolute;}
+.fban > li {width:100%; position:absolute; animation-fill-mode:forwards; animation-timing-function:linear;}
 .fban .wrap {overflow:hidden; background:url(../img/main/wood-green-slider-bestsellers.svg) no-repeat center; background-size:100% auto; padding:2rem 0; color:#fff; font-size:1rem;}
 .fban .wrap > :first-child {float:left; max-width:545px; width:45%;}
 .fban .wrap > :last-child {float:left; width:55%;}
@@ -231,6 +231,12 @@ position: absolute; top:0; right:-0.5em;}
 #fban_pager {font-size:1em; color:#fff; text-align:center; position:absolute; bottom:1rem; left:50%; transform: translateX(-50%);}
 #fban_pager > i {opacity:.5; cursor:pointer; margin:0 0.5rem;}
 #fban_lt:hover, #fban_rt:hover, #fban_pager > i:hover {opacity:1;}
+
+@keyframes fbanAni {
+	0% {transform:scale(0.1); opacity:0;}
+	50% {transform:scale(0.3); opacity:1;}
+	100% {transform:scale(1); opacity:1;}
+}
 
 @media screen and (max-width:768px) {
 	.fban .wrap > :first-child {width:100%;}

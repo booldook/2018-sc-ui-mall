@@ -553,24 +553,52 @@ function resultFn(data) {
 }
 
 /***** 하단 배너 *****/
+var fNum = 0;
+var fLen = 0;
+var duration = 1000;
 function fbanInit() {
 	$(window).resize(function(){
 		//본 작업을 진행하는 이유는 absolute 되어 있는 객체의 높이를 계산하기 위해서..
 	}).trigger("resize");
-	$(".fban").append($(".fban > li").eq(0).clone());
 	$(".fban > li").each(function(i){
 		$(this).css({"left":i*100+"%"});
 	});
-	$("#fban_lt").click(function(){
-
-	});
-	$("#fban_rt").click(function(){
-
-	});
-	$("#fban_pager > i").click(function(){
-		
-	});
+	fLen = $(".fban > li").length - 1;
+	fbanPos();
 }
+function fbanPos() {
+	$(".fban > li").hide().css({"animation-name":""});
+	$(".fban").css({"left":0});
+	$(".fban > li").eq(fNum).show().css({"left":0});
+	if(fNum == 0) {
+		$(".fban > li").eq(fLen).show().css({"left":"-100%"});
+		$(".fban > li").eq(1).show().css({"left":"100%"});
+	}
+	else if(fNum == fLen) {
+		$(".fban > li").eq(fNum - 1).show().css({"left":"-100%"});
+		$(".fban > li").eq(0).show().css({"left":"100%"});
+	}
+	else {
+		$(".fban > li").eq(fNum - 1).show().css({"left":"-100%"});
+		$(".fban > li").eq(fNum + 1).show().css({"left":"100%"});
+	}
+}
+$("#fban_lt").click(function(){
+	if(fNum == fLen) fNum = 0;
+	else fNum++;
+	$(".fban > li").eq(fNum).css({"animation-name":"fbanAni", "animation-duration":duration*0.001+"s"});
+	$(".fban").stop().animate({"left":"-100%"}, duration, fbanPos);
+});
+$("#fban_rt").click(function(){
+	if(fNum == 0) fNum = fLen;
+	else fNum--;
+	$(".fban > li").eq(fNum).css({"animation-name":"fbanAni", "animation-duration":duration*0.001+"s"});
+	$(".fban").stop().animate({"left":"100%"}, duration, fbanPos);
+});
+$("#fban_pager > i").click(function(){
+	var gap =  fNum - $(this).index();
+	fNum = $(this).index();
+	$(".fban").stop().animate({"left":(100*gap)+"%"}, duration, fbanPos);
+});
 fbanInit();
-
 
