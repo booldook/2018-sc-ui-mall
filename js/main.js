@@ -553,12 +553,13 @@ function resultFn(data) {
 }
 
 /***** 하단 배너 *****/
-$(window).resize(function(){
-	//본 작업을 진행하는 이유는 absolute 되어 있는 객체의 높이를 계산하기 위해서..
-}).trigger("resize");
 var fNum = 0;	//현재의 index
 var fLen = $(".fban > li").length - 1;	//마지막 index (예:5개라면 0,1,2,3,4 -> 4)
 var duration = 500;	//animate 속도
+$(window).resize(function(){
+	//본 작업을 진행하는 이유는 absolute 되어 있는 객체의 높이를 계산하기 위해서..
+	$(".fban").height($(".fban > li").eq(fNum).height() + 30);
+}).trigger("resize");
 //최초 한번 실행
 $(".fban > li").each(function(i){
 	$('<i class="fa-circle"></i>').appendTo("#fban_pager").click(function(){
@@ -583,6 +584,7 @@ function fbanAni(val) {
 	$(".fban").stop().animate({"left":val}, duration, fbanPos);
 }
 function fbanPos() {
+	$(".fban").height($(".fban > li").eq(fNum).height() + 30);
 	$("#fban_pager > i").removeClass("fas").addClass("far");
 	$("#fban_pager > i").eq(fNum).removeClass("far").addClass("fas");
 	$(".fban > li").hide().css({"animation-name":""});
